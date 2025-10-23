@@ -18,15 +18,15 @@ First off, thank you for your interest in contributing to **Buy Me a Coffee Afri
 
 Our repository is organized as a pnpm workspace, and is clearly organized to separate the frontend and backend. Here's an overview of the main folder:
 
-**`src/pages/`**: Public pages of the application (e.g., Home, Login, Creator Page, etc.).
-**`src/components/`**: Reusable components (e.g., Navbar, Button, etc.).
-**`src/hooks/`**: Custom hooks to manage specific features (e.g., useAuth, useApi).
-**`src/context/`**: Contexts for global state (e.g., AuthContext, LanguageContext).
-**`src/services/`**: Functions for communicating with the backend (API calls, payment management).
-**`src/utils/`**: Utility functions (formatting, validation, helpers).
-**`frontend/public/`**: Contains publicly accessible static files (images, favicon, etc.).
-**`frontend/package.json`**: Configuration file for dependencies and npm scripts.
-**`frontend/vite.config.js`**: Vite configuration for the React project.
+- **`src/pages/`**: Public pages of the application (e.g., Home, Login, Creator Page, etc.).
+- **`src/components/`**: Reusable components (e.g., Navbar, Button, etc.).
+- **`src/hooks/`**: Custom hooks to manage specific features (e.g., useAuth, useApi).
+- **`src/context/`**: Contexts for global state (e.g., AuthContext, LanguageContext).
+- **`src/services/`**: Functions for communicating with the backend (API calls, payment management).
+- **`src/utils/`**: Utility functions (formatting, validation, helpers).
+- **`frontend/public/`**: Contains publicly accessible static files (images, favicon, etc.).
+- **`frontend/package.json`**: Configuration file for dependencies and npm scripts.
+- **`frontend/vite.config.js`**: Vite configuration for the React project.
 
 ## Getting Started
 
