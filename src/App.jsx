@@ -1,10 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home";
+import Landing from "./pages/Landing";
+
 function App() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-blue-200">
-        <h1 className="text-3xl font-bold">Welcome to BuyMeACoffee-Africa</h1>
-        <p className="mt-4">Our app is under construction, please come back later !</p>
-      </div>
+      
+
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
     </>
   );
 }
