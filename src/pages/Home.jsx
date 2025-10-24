@@ -3,6 +3,9 @@ import DecorativeBar from "../components/DecorativeBar";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Preview from "/Preview.png";
+import { Drama } from "lucide-react";
+import about1 from "/About1.png";
+import about2 from "/image.png";
 
 const Home = () => {
   return (
@@ -36,7 +39,7 @@ const Home = () => {
                 Under construction
               </a>
 
-              <h1 className="font-lora text-black/75 max-w-lg text-center text-4xl font-bold">
+              <h1 className="text-black/75 max-w-lg text-center text-4xl font-bold">
                 Bring your ideas to life. Support and collaborate with Africa's
                 talent.
               </h1>
@@ -81,14 +84,95 @@ const Home = () => {
             </div>
           </section>
 
+          {/* DECORATIVE BAR */}
+          <DecorativeBar />
+
           {/* ABOUT SECTION */}
-          <section></section>
+          <section>
+            <div className="sm:w-[80%] md:w-[90%] lg:w-[70%] xl:w-[80%] 2xl:w-[50%] mx-auto">
+              <div className="">
+                <div className="">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <a href="/" className="inline-flex items-center justify-center rounded-md border px-3 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent cursor-pointer gap-1 bg-zinc-950/10 text-zinc-600 hover:bg-[#202020]/80">
+                      <Drama />
+                      <span>how it works</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center text-center gap-4 mb-10">
+                  <h2 className="text-black/75 max-w-3xl text-center text-4xl font-bold">With us, appointment scheduling is easy</h2>
+                  <p className="max-w-lg text-center text-black/60 font-medium">
+                    Effortless scheduling for business and individuals, powerful
+                    solutions for fast-growing modern companies.
+                  </p>
+                </div>
+                <div className="flex justify-center mb-16">
+                  <Link
+                    href="/"
+                    className='inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*="size-"])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-yellow-500 text-white hover:bg-yellow-600 transition-all duration-300 ease-in-out active:scale-[0.93]'
+                  >
+                    get started free
+                  </Link>
+                </div>
+              </div>
+              <div className="">
+                <div className="grid gap-5 grid-cols-3">
+                  <div className="border border-zinc-950/5 rounded-xl p-5 flex flex-col gap-4 shadow-md">
+                    <div className="flex flex-col gap-2">
+                      <div className="">
+                        <span className="rounded-2xl p-1 bg-zinc-950/5">01</span>
+                      </div>
+                      <h3 className="text-black/75 text-start text-[18px] font-medium line-clamp-1">Create your creator profile</h3>
+                      <p className="max-w-lg text-black/60 font-light text-sm line-clamp-3">
+                        Sign up for free and customize your page to showcase your work, your story, and your projects.
+                      </p>
+                    </div>
+                    <div className="">
+                      <img src={about2} alt="" width={300} height={100} />
+                    </div>
+                  </div>
+
+                  <div className="border border-zinc-950/5 rounded-xl p-5 flex flex-col gap-4 shadow-md">
+                    <div className="flex flex-col gap-2">
+                      <div className="">
+                        <span className="rounded-2xl p-1 bg-zinc-950/5">02</span>
+                      </div>
+                      <h3 className="text-black/75 text-start text-[18px] font-medium line-clamp-1">Share your link with your community</h3>
+                      <p className="max-w-lg text-black/60 font-light text-sm line-clamp-3">
+                        Copy your unique link and share it on social media, your website, or directly via message.
+                      </p>
+                    </div>
+                    <div className="">
+                      <img src={about1} alt="" width={300} height={100} />
+                    </div>
+                  </div>
+
+                  <div className="border border-zinc-950/5 rounded-xl p-5 flex flex-col gap-4 shadow-md">
+                    <div className="flex flex-col gap-2">
+                      <div className="">
+                        <span className="rounded-2xl p-1 bg-zinc-950/5">03</span>
+                      </div>
+                      <h3 className="text-black/75 text-start text-[18px] font-medium line-clamp-1">Receive support and grow your ideas</h3>
+                      <p className="max-w-lg text-black/60 font-light text-sm line-clamp-3">
+                        Every contribution brings you closer to your goal.
+Turn your creative energy into real impact thanks to the generosity of your community 💛.
+                      </p>
+                    </div>
+                    <div className="">
+                      <img src={about1} alt="" width={300} height={100} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
 
       <Footer />
-    </>                                                                                                                                   
-  );                                                                                                                          
+    </>
+  );
 };
 
 export default Home;
