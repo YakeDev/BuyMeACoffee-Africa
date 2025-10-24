@@ -1,18 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/Home";
-import Landing from "./pages/Landing";
+import AppRouter from "./routes/AppRouter";
 
-function App() {
-  return (
-    <>
-      
-
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
-    </>
-  );
-}
+const App = () => {
+  return <AppRouter />;
+};
 
 export default App;
