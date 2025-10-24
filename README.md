@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./" alt="BuyMeACoffee-Africa Banner" width="100%" />
+  <img src="/seo.png" alt="BuyMeACoffee-Africa Banner" width="100%" />
 </p>
 
-**Buy Me a Coffee Africa** est une plateforme africaine inspirée de [Buy Me a Coffee](https://www.buymeacoffee.com), conçue pour permettre aux créateurs, artistes, développeurs et entrepreneurs africains de recevoir facilement du soutien financier via les services **Mobile Money** tels que **Airtel Money**, **Orange Money**, **M-Pesa**, etc.
-[Site officiel](#)
+**Buy Me a Coffee Africa** is an African platform inspired by [Buy Me a Coffee](https://www.buymeacoffee.com), designed to enable African creators, artists, developers, and entrepreneurs to easily receive financial support through **Mobile Money** services such as **Airtel Money**, **Orange Money**, **M-Pesa**, etc.
+[Official Website](#)
 
 #
 
-> _Buy Me a Coffee Africa – ☕ Un café, un soutien, un créateur_
+> _Buy Me a Coffee Africa – ☕ One coffee, one support, one creator_
