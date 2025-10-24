@@ -82,15 +82,13 @@ const Home = () => {
           </section>
 
           {/* ABOUT SECTION */}
-          <section>
-            
-          </section>
+          <section></section>
         </main>
       </div>
 
       <Footer />
-    </>
-  );
+    </>                                                                                                                                   
+  );                                                                                                                          
 };
 
 export default Home;
