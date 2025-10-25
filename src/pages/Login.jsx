@@ -12,9 +12,7 @@ const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
 const Login = () => {
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
-  };
-
-  
+  };  
 
   return (
     <>
