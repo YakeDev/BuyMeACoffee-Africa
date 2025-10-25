@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 // import { useAuth } from "../context/AuthContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebookF, FaApple, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaApple, FaTwitter, FaGithub, FaGithubAlt } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa6";
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
@@ -35,14 +35,14 @@ const Login = () => {
                 onClick={handleGitHubLogin}
                 className="flex items-center cursor-pointer justify-center w-full py-3 px-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
               >
-                <FaGithub className="text-2xl mr-3" />
+                <FaGithubAlt className="text-2xl mr-3" />
                 <span className="text-gray-800 font-medium">Continue with GitHub</span>
               </button>
 
               {/* Ou ligne */}
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-xs text-gray-400">ou se connecter avec</span>
+                <span className="text-xs text-gray-400">or connect with</span>
                 <div className="h-px bg-gray-200 flex-1" />
               </div>
 

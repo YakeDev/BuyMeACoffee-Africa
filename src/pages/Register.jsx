@@ -21,10 +21,10 @@ const Register = () => {
         <div className="w-full max-w-md mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-black/75 text-3xl font-bold mb-2">
-              Inscription
+              Sign up
             </h1>
             <p className="text-black/60 text-sm">
-              Rejoignez BuyMeACoffee Africa
+              Join BuyMeACoffee-Africa
             </p>
           </div>
 
@@ -46,7 +46,7 @@ const Register = () => {
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <div className="h-px bg-gray-200 flex-1" />
                 <span className="text-xs text-gray-400">
-                  ou se connecter avec
+                  or connect with
                 </span>
                 <div className="h-px bg-gray-200 flex-1" />
               </div>
@@ -79,12 +79,12 @@ const Register = () => {
 
             <div className="mt-6 text-center">
               <p className="text-black/60 text-sm">
-                Déjà un compte ?{" "}
+                Already have an account?{" "}
                 <Link
                   to="/login"
                   className="text-yellow-600 hover:text-yellow-700 font-medium"
                 >
-                  Connectez-vous
+                  Log in
                 </Link>
               </p>
             </div>
