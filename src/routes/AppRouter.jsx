@@ -1,13 +1,13 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PublicRoutes from "./PublicRoutes";
 import PrivateRoutes from "./PrivateRoutes";
 import Home from "../pages/Home";
-import Contributors from "../pages/Contributors"; // ajoutée depuis contributors_page
+import Contributors from "../pages/Contributors";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile";
+import GitHubCallback from "../components/GitHubCallback";
 
 const AppRouter = () => {
   return (
@@ -18,6 +18,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/login" element={<Login />} />
+        <Route path="/auth/github/callback" element={<GitHubCallback />} />
           <Route path="/register" element={<Register />} />
         </Route>
 
