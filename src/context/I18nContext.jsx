@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import T from "i18n-react";
 import en from "../locales/en.json";
 import fr from "../locales/fr.json";
@@ -22,15 +22,11 @@ export const I18nProvider = ({ children }) => {
       }
     }
     T.setTexts(getDictionary("en"));
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, "en");
+    }
     return "en";
   });
-
-  useEffect(() => {
-    T.setTexts(getDictionary(language));
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(STORAGE_KEY, language);
-    }
-  }, [language]);
 
   const changeLanguage = useCallback(
     (nextLanguage) => {
@@ -38,6 +34,10 @@ export const I18nProvider = ({ children }) => {
         return;
       }
       if (dictionaries[nextLanguage]) {
+        T.setTexts(getDictionary(nextLanguage));
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem(STORAGE_KEY, nextLanguage);
+        }
         setLanguage(nextLanguage);
       }
     },
