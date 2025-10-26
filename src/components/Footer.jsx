@@ -1,10 +1,12 @@
-import { Mail } from "lucide-react";
-import { Linkedin } from "lucide-react";
-import { Github } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useI18n } from "../context/I18nContext";
 import Logo from "/logo-v5.webp";
 
 const Footer = () => {
+  const { t } = useI18n();
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
             <div className="border-t border-zinc-950/20 bg-zinc-950/2 px-3 pt-10 pb-5 flex items-center justify-between mt-10">
@@ -23,21 +25,21 @@ const Footer = () => {
                                       </div>
                                     </Link>
 
-                            <p className="text-sm text-zinc-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iusto. Dolorum exercitationem temporibus autem cumque?</p>
+                            <p className="text-sm text-zinc-600 leading-relaxed">{t("footer.description")}</p>
 
                             <ul className="flex items-center gap-4 mt-2">
                                 <li>
-                                    <a to="/" className="hover:text-yellow-600 transition">
+                                    <a href="/" className="hover:text-yellow-600 transition">
                                         <Github className="w-5 h-5" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a to="mailto:julesmukadi.dev@gmail.com" className="hover:text-yellow-600 transition">
+                                    <a href="mailto:julesmukadi.dev@gmail.com" className="hover:text-yellow-600 transition">
                                         <Mail className="w-5 h-5" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a to="/" className="hover:text-yellow-600 transition">
+                                    <a href="/" className="hover:text-yellow-600 transition">
                                         <Linkedin className="w-5 h-5" />
                                     </a>
                                 </li>
@@ -45,40 +47,56 @@ const Footer = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-6 text-sm">
                             <div className="flex flex-col gap-2">
-                                <h3 className="capitalize text-lg font-medium">resources</h3>
+                                <h3 className="capitalize text-lg font-medium">{t("common.navigation.resources")}</h3>
                                 <ul className="flex flex-col gap-2">
                                     <li>
-                                        <Link to="/about" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">About</Link>
+                                        <Link to="/about" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.about")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/blog" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">Blog</Link>
+                                        <Link to="/blog" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.blog")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/dev" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">Developers</Link>
+                                        <Link to="/dev" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.developers")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/team" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">Team</Link>
+                                        <Link to="/team" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.team")}
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <h3 className="capitalize font-medium text-lg">company</h3>
+                                <h3 className="capitalize font-medium text-lg">{t("common.navigation.company")}</h3>
                                 <ul className="flex flex-col gap-2">
                                     {/* <li>
                                         <Link to="/support" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">contacter support</Link>
                                     </li> */}
                                     <li>
-                                        <Link to="/help" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">help</Link>
+                                        <Link to="/help" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.help")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/privacy" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">Privacy Policy</Link>
+                                        <Link to="/privacy" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.privacy")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/terms" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">Terms of Service</Link>
+                                        <Link to="/terms" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.terms")}
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/license" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">license</Link>
+                                        <Link to="/license" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                          {t("common.navigation.license")}
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -87,12 +105,12 @@ const Footer = () => {
 
                     <div className="flex items-center justify-between mt-10 text-sm border-t border-zinc-950/5 pt-4">
                         <div className="">
-                            <span>&copy; 2025 BuyMeACoffee-Africa. All rights reserved.</span>
+                            <span>{t("dates.yearlyCopyright", { year: currentYear })}</span>
                         </div>
                         <div className="flex gap-1 justify-end items-center">
-                            <span className="capitalize">by</span>
+                            <span className="capitalize">{t("common.layout.by")}</span>
                             <Link to="/contributors" className="flex items-center gap-1 hover:text-yellow-500 transition duration-300 underline underline-offset-2">
-                                <span className="uppercase font-bold">contributors</span>
+                                <span className="uppercase font-bold">{t("common.navigation.contributors")}</span>
                             </Link>
                         </div>
                     </div>

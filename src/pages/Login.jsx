@@ -1,15 +1,17 @@
 // import React, { useState } from "react";
-import { Link } from "react-router-dom";
 // import { useAuth } from "../context/AuthContext";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaFacebookF, FaApple, FaTwitter, FaGithub, FaGithubAlt } from "react-icons/fa";
-import { FaGitAlt } from "react-icons/fa6";
+import Navbar from "../components/Navbar";
+import { useI18n } from "../context/I18nContext";
+import { Link } from "react-router-dom";
+import { FaApple, FaFacebookF, FaGithubAlt, FaTwitter } from "react-icons/fa";
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
 
 const Login = () => {
+  const { t } = useI18n();
+
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
   };  
@@ -24,8 +26,8 @@ const Login = () => {
           <div className="h-8" />
 
           {/* Titre */}
-          <h1 className="text-black font-semibold text-3xl mb-6">Welcome back</h1>
-          <p className="text-gray-500 mb-8">Accédez à votre tableau de bord</p>
+          <h1 className="text-black font-semibold text-3xl mb-6">{t("login.title")}</h1>
+          <p className="text-gray-500 mb-8">{t("login.subtitle")}</p>
 
           {/* Container principal */}
           <div className="border border-zinc-950/5 rounded-2xl p-6 shadow-sm bg-white">
@@ -36,13 +38,13 @@ const Login = () => {
                 className="flex items-center cursor-pointer justify-center w-full py-3 px-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
               >
                 <FaGithubAlt className="text-2xl mr-3" />
-                <span className="text-gray-800 font-medium">Continue with GitHub</span>
+                <span className="text-gray-800 font-medium">{t("login.github")}</span>
               </button>
 
               {/* Ou ligne */}
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-xs text-gray-400">or connect with</span>
+                <span className="text-xs text-gray-400">{t("login.divider")}</span>
                 <div className="h-px bg-gray-200 flex-1" />
               </div>
 
@@ -52,7 +54,7 @@ const Login = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaFacebookF className="text-lg ml-2 mr-4" />
-                <span>Continue with Facebook</span>
+                <span>{t("login.facebook")}</span>
               </button>
 
               <button
@@ -60,7 +62,7 @@ const Login = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaApple className="text-lg ml-2 mr-4" />
-                <span>Continue with Apple</span>
+                <span>{t("login.apple")}</span>
               </button>
 
               <button
@@ -68,16 +70,16 @@ const Login = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaTwitter className="text-lg ml-2 mr-4" />
-                <span>Continue with Twitter</span>
+                <span>{t("login.twitter")}</span>
               </button>
             </div>
 
             {/* Lien inscription */}
             <div className="mt-6 text-center">
               <p className="text-gray-500 text-sm">
-                Don’t have an account?{" "}
+                {t("login.cta.question")}{" "}
                 <Link to="/register" className="text-yellow-500 hover:underline font-medium">
-                  Sign up
+                  {t("login.cta.action")}
                 </Link>
               </p>
             </div>

@@ -1,15 +1,18 @@
 // import React, { useState } from "react";
-import { Link } from "react-router-dom";
 // import { useAuth } from "../context/AuthContext";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaGithub, FaGithubAlt } from "react-icons/fa";
+import Navbar from "../components/Navbar";
+import { useI18n } from "../context/I18nContext";
+import { Link } from "react-router-dom";
+import { FaGithubAlt } from "react-icons/fa";
 import { FaApple, FaFacebookF, FaTwitter } from "react-icons/fa6";
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
 
 const Register = () => {
+  const { t } = useI18n();
+
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
   };
@@ -21,10 +24,10 @@ const Register = () => {
         <div className="w-full max-w-md mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-black/75 text-3xl font-bold mb-2">
-              Sign up
+              {t("register.title")}
             </h1>
             <p className="text-black/60 text-sm">
-              Join BuyMeACoffee-Africa
+              {t("register.subtitle")}
             </p>
           </div>
 
@@ -38,7 +41,7 @@ const Register = () => {
               >
                 <FaGithubAlt className="text-2xl mr-3" />
                 <span className="text-gray-800 font-medium">
-                  Continue with GitHub
+                  {t("register.github")}
                 </span>
               </button>
 
@@ -46,7 +49,7 @@ const Register = () => {
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <div className="h-px bg-gray-200 flex-1" />
                 <span className="text-xs text-gray-400">
-                  or connect with
+                  {t("register.divider")}
                 </span>
                 <div className="h-px bg-gray-200 flex-1" />
               </div>
@@ -57,7 +60,7 @@ const Register = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaFacebookF className="text-lg ml-2 mr-4" />
-                <span>Continue with Facebook</span>
+                <span>{t("register.facebook")}</span>
               </button>
 
               <button
@@ -65,7 +68,7 @@ const Register = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaApple className="text-lg ml-2 mr-4" />
-                <span>Continue with Apple</span>
+                <span>{t("register.apple")}</span>
               </button>
 
               <button
@@ -73,18 +76,18 @@ const Register = () => {
                 className="flex items-center justify-start w-full py-3 px-4 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
               >
                 <FaTwitter className="text-lg ml-2 mr-4" />
-                <span>Continue with Twitter</span>
+                <span>{t("register.twitter")}</span>
               </button>
             </div>
 
             <div className="mt-6 text-center">
               <p className="text-black/60 text-sm">
-                Already have an account?{" "}
+                {t("register.cta.question")}{" "}
                 <Link
                   to="/login"
                   className="text-yellow-600 hover:text-yellow-700 font-medium"
                 >
-                  Log in
+                  {t("register.cta.action")}
                 </Link>
               </p>
             </div>
