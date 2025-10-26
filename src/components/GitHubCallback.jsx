@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useI18n } from "../context/I18nContext";
 
 const GitHubCallback = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   useEffect(() => {
     const code = searchParams.get("code");
@@ -16,7 +18,7 @@ const GitHubCallback = () => {
     }
   }, [searchParams, navigate]);
 
-  return <div className="flex justify-center items-center h-screen">GitHub Login...</div>;
+  return <div className="flex justify-center items-center h-screen">{t("auth.githubCallback")}</div>;
 };
 
 export default GitHubCallback;
