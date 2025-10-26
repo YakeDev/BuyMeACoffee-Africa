@@ -121,6 +121,18 @@
     "overview": {
       "title": "Overview",
       "description": "Get a quick overview of your account."
+    },
+    "donations": {
+      "title": "Donations",
+      "description": "Manage your donations here."
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your profile settings here."
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage your account settings here."
     }
   },
   "profile": {
