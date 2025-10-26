@@ -19,8 +19,15 @@ const Register = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="min-h-screen flex items-center justify-center px-6 py-20">
+      <div className="">
+        <button
+          onClick={() => (window.location.href = "/")}
+          className="cursor-pointer whitespace-nowrap text-sm font-normal disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-3 rounded-md gap-1.5 px-5 has-[>svg]:px-3 underline underline-offset-1 text-black hover:text-yellow-500 transition-all duration-300 ease-in-out active:scale-[0.93]"
+        >
+          Back to home
+        </button>
+      </div>
+      <div className="mt-50 flex items-center justify-center px-6 py-20">
         <div className="w-full max-w-md mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-black/75 text-3xl font-bold mb-2">
@@ -32,8 +39,8 @@ const Register = () => {
           </div>
 
           {/* Container principal */}
-          <div className="border border-zinc-950/5 rounded-2xl p-6 shadow-sm bg-white">
-            <div className="space-y-3">
+          <div className="p-6 bg-white">
+            <div className="flex flex-col gap-4">
               {/* Bouton Google — actif */}
               <button
                 onClick={handleGitHubLogin}
@@ -51,7 +58,7 @@ const Register = () => {
                 <span className="text-xs text-gray-400">
                   {t("register.divider")}
                 </span>
-                <div className="h-px bg-gray-200 flex-1" />
+                <div className="h-px bg-zinc-300 flex-1" />
               </div>
 
               {/* Autres boutons — visuels (désactivés) */}
@@ -80,6 +87,7 @@ const Register = () => {
               </button>
             </div>
 
+            {/* Link login */}
             <div className="mt-6 text-center">
               <p className="text-black/60 text-sm">
                 {t("register.cta.question")}{" "}
@@ -94,7 +102,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

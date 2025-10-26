@@ -14,13 +14,19 @@ const Login = () => {
 
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
-  };  
+  };
 
   return (
     <>
-      <Navbar />
-
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6">
+      <div className="">
+        <button
+          onClick={() => (window.location.href = "/")}
+          className="cursor-pointer whitespace-nowrap text-sm font-normal disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-3 rounded-md gap-1.5 px-5 has-[>svg]:px-3 underline underline-offset-1 text-black hover:text-yellow-500 transition-all duration-300 ease-in-out active:scale-[0.93]"
+        >
+          Back to home
+        </button>
+      </div>
+      <div className="mt-50 flex flex-col items-center justify-center bg-white px-6">
         <div className="w-full max-w-md mx-auto text-center">
           {/* Espace haut (sans logo) */}
           <div className="h-8" />
@@ -30,8 +36,8 @@ const Login = () => {
           <p className="text-gray-500 mb-8">{t("login.subtitle")}</p>
 
           {/* Container principal */}
-          <div className="border border-zinc-950/5 rounded-2xl p-6 shadow-sm bg-white">
-            <div className="space-y-3">
+          <div className="p-6 bg-white">
+            <div className="flex flex-col gap-4">
               {/* Bouton Google — actif */}
               <button
                 onClick={handleGitHubLogin}
@@ -86,8 +92,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };
