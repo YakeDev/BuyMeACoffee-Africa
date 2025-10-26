@@ -1,0 +1,145 @@
+{
+  "common": {
+    "language": {
+      "label": "Langue",
+      "english": "Anglais",
+      "french": "Français"
+    },
+    "actions": {
+      "goToApp": "Accéder à l'application",
+      "getStarted": "Commencer gratuitement",
+      "backToHome": "Retour à l'accueil",
+      "viewOnGithub": "Voir sur GitHub"
+    },
+    "status": {
+      "underConstruction": "En construction",
+      "loadingContributors": "Chargement des contributeurs..."
+    },
+    "layout": {
+      "by": "par"
+    },
+    "navigation": {
+      "resources": "Ressources",
+      "company": "Entreprise",
+      "help": "Aide",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "license": "Licence",
+      "about": "À propos",
+      "blog": "Blog",
+      "developers": "Développeurs",
+      "team": "Équipe",
+      "contributors": "Contributeurs"
+    }
+  },
+  "navbar": {
+    "contributors": {
+      "singular": "{count} contributeur",
+      "plural": "{count} contributeurs"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Donnez vie à vos idées. Soutenez et collaborez avec les talents d'Afrique.",
+      "subtitle": "Nous développons actuellement notre application pour vous offrir la meilleure expérience possible. Elle sera bientôt disponible !"
+    },
+    "about": {
+      "badge": "Comment ça marche",
+      "title": "Avec nous, la prise de rendez-vous est simple",
+      "subtitle": "Une planification sans effort pour les entreprises et les particuliers, avec des solutions puissantes pour les organisations modernes en croissance.",
+      "steps": {
+        "one": {
+          "title": "Créez votre profil de créateur",
+          "description": "Inscrivez-vous gratuitement et personnalisez votre page pour présenter votre travail, votre histoire et vos projets."
+        },
+        "two": {
+          "title": "Partagez votre lien avec votre communauté",
+          "description": "Copiez votre lien unique et partagez-le sur les réseaux sociaux, votre site web ou directement par message."
+        },
+        "three": {
+          "title": "Recevez du soutien et faites grandir vos idées",
+          "description": "Chaque contribution vous rapproche de votre objectif. Transformez votre énergie créative en impact réel grâce à la générosité de votre communauté 💛."
+        }
+      }
+    }
+  },
+  "contributors": {
+    "title": "Nos contributeurs exceptionnels 😎",
+    "description": "Merci à toutes les personnes formidables qui ont contribué à BuyMeACoffee-Africa ! Vos contributions rendent ce projet possible.",
+    "button": {
+      "view": "Voir sur GitHub",
+      "back": "Retour à l'accueil"
+    },
+    "footerTitle": "Prêt à contribuer ?",
+    "footerSubtitle": "Vous voulez voir votre nom ici ? Consultez notre dépôt GitHub et commencez à contribuer dès aujourd'hui !",
+    "list": {
+      "contributionSingular": "{count} contribution",
+      "contributionPlural": "{count} contributions"
+    },
+    "errors": {
+      "title": "Erreur lors du chargement des contributeurs",
+      "general": "Un problème est survenu lors du chargement des contributeurs.",
+      "fetch": "Échec du chargement des contributeurs."
+    }
+  },
+  "footer": {
+    "description": "Une plateforme portée par la communauté pour soutenir les créateurs à travers l'Afrique."
+  },
+  "login": {
+    "title": "Content de vous revoir",
+    "github": "Continuer avec GitHub",
+    "google": "Continuer avec Google",
+    "divider": "ou connectez-vous avec",
+    "cta": {
+      "question": "Pas encore de compte ?",
+      "action": "Inscrivez-vous"
+    }
+  },
+  "register": {
+    "title": "Inscrivez-vous",
+    "subtitle": "Rejoignez BuyMeACoffee-Africa",
+    "github": "Continuer avec GitHub",
+    "google": "Continuer avec Google",
+    "divider": "ou connectez-vous avec",
+    "cta": {
+      "question": "Vous avez déjà un compte ?",
+      "action": "Connectez-vous"
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "menu": "Menu",
+    "links": {
+      "overview": "Vue d'ensemble",
+      "settings": "Paramètres"
+    },
+    "overview": {
+      "title": "Vue d'ensemble",
+      "description": "Obtenez un aperçu rapide de votre compte."
+    },
+    "donations": {
+      "title": "Dons",
+      "description": "Gérez vos dons ici."
+    },
+    "profile": {
+      "title": "Profil",
+      "description": "Gérez les paramètres de votre profil ici."
+    },
+    "settings": {
+      "title": "Paramètres",
+      "description": "Gérez les paramètres de votre compte ici."
+    }
+  },
+  "profile": {
+    "title": "Profil utilisateur",
+    "name": "Nom",
+    "email": "Email",
+    "notSet": "Non défini"
+  },
+  "auth": {
+    "githubCallback": "Traitement de la connexion GitHub..."
+  },
+  "dates": {
+    "yearlyCopyright": "© {year} BuyMeACoffee-Africa. Tous droits réservés."
+  }
+}
