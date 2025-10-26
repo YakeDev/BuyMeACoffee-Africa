@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile";
 import GitHubCallback from "../components/GitHubCallback";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => {
   return (
@@ -18,8 +19,9 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/login" element={<Login />} />
-        <Route path="/auth/github/callback" element={<GitHubCallback />} />
+          <Route path="/auth/github/callback" element={<GitHubCallback />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
         {/* Routes privées - protégées par AuthContext */}
