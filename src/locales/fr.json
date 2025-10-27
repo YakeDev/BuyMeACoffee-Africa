@@ -8,10 +8,12 @@
     "actions": {
       "goToApp": "Accéder à l'application",
       "getStarted": "Commencer gratuitement",
-      "backToHome": "Retour à l'accueil",
+      "backToHome": "Retour à l’accueil",
       "viewOnGithub": "Voir sur GitHub",
       "darkMode": "Sombre",
-      "lightMode": "Clair"
+      "lightMode": "Clair",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu"
     },
     "status": {
       "underConstruction": "En construction",
