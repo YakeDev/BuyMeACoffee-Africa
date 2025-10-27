@@ -35,7 +35,7 @@ const AppRoutes = () => {
           <Route path="register" element={<Register />} />
         </Route>
 
-        <Route path="/privacy" element={<Privacy />} />
+        <Route path="privacy" element={<Privacy />} />
 
         {/* Routes privées */}
         <Route element={<PrivateRoutes />}>

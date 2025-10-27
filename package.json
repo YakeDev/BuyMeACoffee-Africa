@@ -12,8 +12,10 @@
   "dependencies": {
     "@react-oauth/google": "^0.12.2",
     "@tailwindcss/vite": "^4.1.15",
+    "dotenv": "^17.2.3",
     "i18n-react": "^0.7.0",
     "lucide-react": "^0.546.0",
+    "node-fetch": "^2.7.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
