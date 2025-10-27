@@ -9,7 +9,9 @@
       "goToApp": "Go to app",
       "getStarted": "Get started free",
       "backToHome": "Back to home",
-      "viewOnGithub": "View on GitHub"
+      "viewOnGithub": "View on GitHub",
+      "darkMode": "Dark",
+      "lightMode": "Light"
     },
     "status": {
       "underConstruction": "Under construction",
@@ -69,6 +71,17 @@
     "button": {
       "view": "View on GitHub",
       "back": "Back to home"
+    },
+    "filters": {
+      "all": "All",
+      "top": "Top 10+",
+      "active": "Active",
+      "fresh": "New"
+    },
+    "badges": {
+      "top": "Top supporter",
+      "active": "Active maker",
+      "fresh": "Fresh contributor"
     },
     "footerTitle": "Ready to contribute?",
     "footerSubtitle": "Want to see your name here? Check out our GitHub repository and start contributing today!",

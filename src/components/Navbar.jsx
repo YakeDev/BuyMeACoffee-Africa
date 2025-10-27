@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Moon, Sun } from 'lucide-react'
 import { FALLBACK_LANGUAGE, useI18n } from '../context/I18nContext'
+import { useTheme } from '../context/ThemeContext'
 import Logo from '/logo-v5.webp'
 
 const Navbar = () => {
 	const [contributors, setContributors] = useState([])
 	const { t, language, setLanguage, availableLanguages } = useI18n()
+	const { toggleMode, isDark } = useTheme()
 	const location = useLocation()
 	const navigate = useNavigate()
 
@@ -88,21 +91,36 @@ const Navbar = () => {
 			<nav className='surface-blur mx-auto flex max-w-6xl items-center justify-between rounded-full px-6 py-3 transition-all duration-300'>
 				<Link to={withLanguagePrefix('/')} className='flex items-center gap-3'>
 					<div className='flex items-center gap-2'>
-						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[rgba(107,62,38,0.08)] shadow-inner'>
+						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[var(--btn-outline-bg)] shadow-inner'>
 							<img src={Logo} alt='' width={32} height={32} />
 						</span>
-						<div className='flex flex-col leading-normal'>
-							<span className='text-lg font-semibold uppercase tracking-[0.12em] text-[var(--color-latte)]'>
-								BuyMeACoffee
+						<div className='flex flex-row leading-tight'>
+							<span className='font-heading text-xl font-bold tracking-wide text-[var(--text-primary)]'>
+								BuyMeA
 							</span>
-							<span className='text-base font-semibold -mt-1 text-[var(--color-espresso)]'>
-								Africa
+							<span className='font-heading text-lg font-bold text-[var(--color-honey)]'>
+								Coffee
 							</span>
 						</div>
 					</div>
 				</Link>
 
 				<ul className='flex items-center gap-4'>
+					<li>
+						<Link
+							to={withLanguagePrefix('/contributors')}
+							className='btn-secondary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium'>
+							<span className='inline-block size-2 rounded-full bg-[var(--color-honey)]' />
+							<span>{contributorCountLabel}</span>
+						</Link>
+					</li>
+					<li>
+						<Link
+							to={withLanguagePrefix('/login')}
+							className='btn-primary inline-flex items-center rounded-full px-5 py-2 text-sm font-semibold'>
+							{t('common.actions.goToApp')}
+						</Link>
+					</li>
 					<li>
 						<label className='sr-only' htmlFor='language-toggle'>
 							{t('common.language.label')}
@@ -118,7 +136,7 @@ const Navbar = () => {
 											: availableLanguages[0]
 								handleLanguageChange({ target: { value: nextLang } })
 							}}
-							className='btn-outline inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium tracking-wide text-[var(--color-espresso)]'>
+							className='btn-outline inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium tracking-wide text-[var(--text-primary)]'>
 							{activeLanguage === 'en'
 								? t('common.language.english')
 								: activeLanguage === 'fr'
@@ -126,21 +144,22 @@ const Navbar = () => {
 									: activeLanguage.toUpperCase()}
 						</button>
 					</li>
-
 					<li>
-						<Link
-							to={withLanguagePrefix('/contributors')}
-							className='btn-secondary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium'>
-							<span className='inline-block size-2 rounded-full bg-[var(--color-honey)]' />
-							<span>{contributorCountLabel}</span>
-						</Link>
-					</li>
-					<li>
-						<Link
-							to={withLanguagePrefix('/login')}
-							className='btn-primary inline-flex items-center rounded-full px-5 py-2 text-sm font-semibold'>
-							{t('common.actions.goToApp')}
-						</Link>
+						<button
+							type='button'
+							onClick={toggleMode}
+							className='btn-outline inline-flex items-center justify-center rounded-full p-2 text-sm font-medium text-[var(--text-primary)]'
+							aria-label={
+								isDark
+									? t('common.actions.lightMode')
+									: t('common.actions.darkMode')
+							}>
+							{isDark ? (
+								<Sun className='size-4 icon-accent' />
+							) : (
+								<Moon className='size-4 icon-accent' />
+							)}
+						</button>
 					</li>
 				</ul>
 			</nav>

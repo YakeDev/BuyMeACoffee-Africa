@@ -27,8 +27,8 @@ const Login = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
   };
 
-  return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[rgba(245,237,230,0.94)] via-[rgba(200,159,133,0.25)] to-[rgba(245,237,230,0.94)] px-6 py-20">
+	return (
+		<div className="page-shell relative min-h-screen bg-gradient-to-b from-[rgba(245,237,230,0.94)] via-[rgba(200,159,133,0.25)] to-[rgba(245,237,230,0.94)] px-6 py-20">
       <div className="absolute inset-x-0 top-0 -z-10 h-56 bg-gradient-to-b from-[rgba(245,237,230,0.95)] via-transparent to-transparent" />
       <div className="mx-auto flex w-full max-w-md flex-col gap-8 text-center">
         <Link
@@ -38,20 +38,20 @@ const Login = () => {
           {t("common.actions.backToHome")}
         </Link>
 
-        <div className="surface-card rounded-3xl p-10">
-          <h1 className="text-3xl font-semibold text-[var(--color-espresso)]">{t("login.title")}</h1>
-          <p className="mt-2 text-sm text-[color:rgba(43,27,18,0.72)]">
+	        <div className="surface-card rounded-3xl p-10">
+	          <h1 className="font-heading text-3xl font-semibold text-[var(--text-primary)]">{t("login.title")}</h1>
+	          <p className="mt-2 text-sm text-[var(--text-secondary)]">
             {t("home.hero.subtitle")}
           </p>
 
           <div className="mt-8 flex flex-col gap-4">
-            <button
-              onClick={handleGitHubLogin}
-              className="btn-primary flex items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold"
-            >
-              <FaGithubAlt className="text-lg" />
-              {t("login.github")}
-            </button>
+	            <button
+	              onClick={handleGitHubLogin}
+	              className="btn-primary flex items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold"
+	            >
+	              <FaGithubAlt className="icon-accent text-lg" />
+	              {t("login.github")}
+	            </button>
 
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-[rgba(107,62,38,0.55)]">
               <span className="flex-1 border-t border-[rgba(200,159,133,0.4)]" />
@@ -59,15 +59,15 @@ const Login = () => {
               <span className="flex-1 border-t border-[rgba(200,159,133,0.4)]" />
             </div>
 
-            <button
-              className="btn-secondary flex cursor-not-allowed items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold"
-            >
-              <FaGoogle className="text-base" />
+	            <button
+	              className="btn-secondary flex cursor-not-allowed items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold"
+	            >
+	              <FaGoogle className="icon-accent text-base" />
               {t("login.google")}
             </button>
           </div>
 
-          <div className="mt-8 rounded-2xl bg-[rgba(200,159,133,0.12)] px-4 py-3 text-sm text-[color:rgba(43,27,18,0.68)]">
+	          <div className="mt-8 rounded-2xl bg-[rgba(200,159,133,0.12)] px-4 py-3 text-sm text-[var(--text-muted)]">
             {t("login.cta.question")}{" "}
             <Link
               to={withLanguagePrefix("/register")}

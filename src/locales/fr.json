@@ -9,7 +9,9 @@
       "goToApp": "Accéder à l'application",
       "getStarted": "Commencer gratuitement",
       "backToHome": "Retour à l'accueil",
-      "viewOnGithub": "Voir sur GitHub"
+      "viewOnGithub": "Voir sur GitHub",
+      "darkMode": "Sombre",
+      "lightMode": "Clair"
     },
     "status": {
       "underConstruction": "En construction",
@@ -69,6 +71,17 @@
     "button": {
       "view": "Voir sur GitHub",
       "back": "Retour à l'accueil"
+    },
+    "filters": {
+      "all": "Tous",
+      "top": "Top 10+",
+      "active": "Actifs",
+      "fresh": "Nouveaux"
+    },
+    "badges": {
+      "top": "Super soutien",
+      "active": "Contributeur actif",
+      "fresh": "Nouveau membre"
     },
     "footerTitle": "Prêt à contribuer ?",
     "footerSubtitle": "Vous voulez voir votre nom ici ? Consultez notre dépôt GitHub et commencez à contribuer dès aujourd'hui !",

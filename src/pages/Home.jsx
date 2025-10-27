@@ -51,18 +51,18 @@ const Home = () => {
 		<>
 			<Navbar />
 
-			<main className='relative flex min-h-screen flex-col pt-36'>
+			<main className='page-shell relative flex min-h-screen flex-col pt-36'>
 				<section className='relative'>
 					<div className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-6 text-center'>
-						<div className='chip-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em]'>
-							<FaGithub className='size-4 text-[var(--color-coffee)]' />
+					<div className='chip-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em]'>
+						<FaGithub className='icon-accent size-4' />
 							{t('common.status.underConstruction')}
 						</div>
 
-						<h1 className='max-w-3xl text-balance text-4xl font-bold leading-tight text-[var(--color-espresso)] md:text-5xl lg:text-6xl'>
+					<h1 className='font-heading max-w-3xl text-balance text-4xl font-bold leading-tight text-[var(--text-primary)] md:text-5xl lg:text-6xl'>
 							{t('home.hero.title')}
 						</h1>
-						<p className='max-w-2xl text-base text-[color:rgba(43,27,18,0.72)] md:text-lg'>
+					<p className='max-w-2xl text-base text-[var(--text-secondary)] md:text-lg'>
 							{t('home.hero.subtitle')}
 						</p>
 
@@ -81,8 +81,8 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section className='mx-auto mt-20 w-full max-w-5xl px-6'>
-					<div className='surface-card rounded-[1.5rem] p-4'>
+			<section className='mx-auto mt-20 w-full max-w-5xl px-6'>
+				<div className='surface-card rounded-[2.5rem] p-8'>
 						<div className='mb-6 flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-[var(--color-latte)]'>
 							<span className='size-3 rounded-full bg-red-500' />
 							<span className='size-3 rounded-full bg-yellow-400' />
@@ -102,16 +102,16 @@ const Home = () => {
 				</section>
 
 				<section className='mx-auto mt-24 w-full max-w-5xl px-6 pb-20'>
-					<div className='flex flex-col items-center gap-6 text-center'>
-						<span className='chip-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em]'>
-							<Drama className='size-4 text-[var(--color-coffee)]' />
+				<div className='flex flex-col items-center gap-6 text-center'>
+					<span className='chip-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em]'>
+						<Drama className='icon-accent size-4' />
 							{t('home.about.badge')}
 						</span>
 
-						<h2 className='max-w-3xl text-balance text-3xl font-semibold text-[var(--color-espresso)] md:text-4xl'>
+					<h2 className='font-heading max-w-3xl text-balance text-3xl font-semibold text-[var(--text-primary)] md:text-4xl'>
 							{t('home.about.title')}
 						</h2>
-						<p className='max-w-2xl text-base text-[color:rgba(43,27,18,0.72)] md:text-lg'>
+					<p className='max-w-2xl text-base text-[var(--text-secondary)] md:text-lg'>
 							{t('home.about.subtitle')}
 						</p>
 
@@ -130,10 +130,10 @@ const Home = () => {
 								<div className='inline-flex w-fit items-center gap-2 rounded-full bg-[rgba(200,159,133,0.22)] px-3 py-1 text-xs font-semibold text-[var(--color-coffee)]'>
 									<span>{step.id}</span>
 								</div>
-								<h3 className='text-left text-lg font-semibold text-[var(--color-espresso)]'>
+						<h3 className='font-heading text-left text-lg font-semibold text-[var(--text-primary)]'>
 									{step.title}
 								</h3>
-								<p className='text-left text-sm text-[color:rgba(43,27,18,0.68)]'>
+						<p className='text-left text-sm text-[var(--text-muted)]'>
 									{step.description}
 								</p>
 								<div className='overflow-hidden rounded-xl border border-[rgba(107,62,38,0.08)] bg-[rgba(245,237,230,0.7)] p-4 '>

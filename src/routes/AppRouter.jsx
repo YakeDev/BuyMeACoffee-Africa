@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import PublicRoutes from "./PublicRoutes";
 import PrivateRoutes from "./PrivateRoutes";
 import LanguageLayout from "./LanguageLayout";
@@ -17,33 +17,41 @@ const DefaultLanguageRedirect = () => {
   return <Navigate to={`/${language ?? FALLBACK_LANGUAGE}`} replace />;
 };
 
-const AppRouter = () => {
+const AppRoutes = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<DefaultLanguageRedirect />} />
+    <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<DefaultLanguageRedirect />} />
 
-        <Route path="/:language" element={<LanguageLayout />}>
-          {/* Routes publiques - accessibles sans authentification */}
-          <Route element={<PublicRoutes />}>
-            <Route index element={<Home />} />
-            <Route path="contributors" element={<Contributors />} />
-            <Route path="login" element={<Login />} />
-            <Route path="auth/github/callback" element={<GitHubCallback />} />
-            <Route path="register" element={<Register />} />
-          </Route>
+      <Route path=":language" element={<LanguageLayout />}>
+        {/* Routes publiques - accessibles sans authentification */}
+        <Route element={<PublicRoutes />}>
+          <Route index element={<Home />} />
+          <Route path="contributors" element={<Contributors />} />
+          <Route path="login" element={<Login />} />
+          <Route path="auth/github/callback" element={<GitHubCallback />} />
+          <Route path="register" element={<Register />} />
+        </Route>
 
-          {/* Routes privées - protégées par AuthContext */}
-          <Route element={<PrivateRoutes />}>
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="profile" element={<Profile />} />
-          </Route>
-
-          <Route path="*" element={<NotFound />} />
+        {/* Routes privées - protégées par AuthContext */}
+        <Route element={<PrivateRoutes />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
-      </Routes>
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
+const AppRouter = () => {
+  return (
+    <Router>
+      <AppRoutes />
     </Router>
   );
 };
