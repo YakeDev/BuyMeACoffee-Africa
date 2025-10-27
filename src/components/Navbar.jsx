@@ -88,14 +88,14 @@ const Navbar = () => {
 			<nav className='surface-blur mx-auto flex max-w-6xl items-center justify-between rounded-full px-6 py-3 transition-all duration-300'>
 				<Link to={withLanguagePrefix('/')} className='flex items-center gap-3'>
 					<div className='flex items-center gap-2'>
-						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[var(--color-cream)] shadow-inner'>
+						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[rgba(107,62,38,0.08)] shadow-inner'>
 							<img src={Logo} alt='' width={32} height={32} />
 						</span>
-						<div className='flex flex-col leading-tight'>
-							<span className='text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-latte)]'>
+						<div className='flex flex-col leading-normal'>
+							<span className='text-lg font-semibold uppercase tracking-[0.12em] text-[var(--color-latte)]'>
 								BuyMeACoffee
 							</span>
-							<span className='text-xl font-semibold text-[var(--color-espresso)]'>
+							<span className='text-base font-semibold -mt-1 text-[var(--color-espresso)]'>
 								Africa
 							</span>
 						</div>
