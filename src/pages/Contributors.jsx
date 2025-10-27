@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DecorativeBar from "../components/DecorativeBar";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 
-export default function Contributors() {
+const Contributors = () => {
   const [contributors, setContributors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +16,6 @@ export default function Contributors() {
     const fetchContributors = async () => {
       try {
         setLoading(true);
-        // Using a CORS proxy for demonstration - in production, use your own backend
         const response = await fetch(
           "https://api.allorigins.win/raw?url=" +
             encodeURIComponent(
@@ -45,12 +43,12 @@ export default function Contributors() {
 
   if (loading) {
     return (
-      <div className="min-h-screen from-amber-50 to-yellow-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-600"></div>
-          <p className="mt-4 text-gray-700 font-medium">
-            {t("common.status.loadingContributors")}
-          </p>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[rgba(245,237,230,0.96)] via-[rgba(200,159,133,0.28)] to-[rgba(245,237,230,0.96)]">
+        <div className="surface-card flex flex-col items-center gap-4 rounded-3xl px-10 py-12">
+          <span className="inline-flex size-12 items-center justify-center rounded-full border border-[rgba(200,159,133,0.4)] bg-[rgba(245,237,230,0.8)]">
+            <span className="size-6 animate-spin rounded-full border-2 border-[rgba(107,62,38,0.15)] border-t-[rgba(107,62,38,0.55)]" />
+          </span>
+          <p className="text-sm font-medium text-[color:rgba(43,27,18,0.7)]">{t("common.status.loadingContributors")}</p>
         </div>
       </div>
     );
@@ -58,31 +56,15 @@ export default function Contributors() {
 
   if (error) {
     return (
-      <div className="min-h-screen from-amber-50 to-yellow-100 flex items-center justify-center">
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md">
-          <div className="text-red-600 text-center">
-            <svg
-              className="w-16 h-16 mx-auto mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <h2 className="text-xl font-bold mb-2">
-              {t("contributors.errors.title")}
-            </h2>
-            <p className="text-gray-600">
-              {error === "fetch"
-                ? t("contributors.errors.fetch")
-                : t("contributors.errors.general")}
-            </p>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[rgba(245,237,230,0.96)] via-[rgba(200,159,133,0.28)] to-[rgba(245,237,230,0.96)] px-6">
+        <div className="surface-card w-full max-w-md rounded-3xl p-10 text-center">
+          <div className="mx-auto flex size-12 items-center justify-center rounded-full border border-[rgba(225,169,72,0.4)] bg-[rgba(225,169,72,0.18)] text-lg font-semibold text-[var(--color-coffee)]">
+            !
           </div>
+          <h2 className="mt-6 text-xl font-semibold text-[var(--color-espresso)]">{t("contributors.errors.title")}</h2>
+          <p className="mt-3 text-sm text-[color:rgba(43,27,18,0.7)]">
+            {error === "fetch" ? t("contributors.errors.fetch") : t("contributors.errors.general")}
+          </p>
         </div>
       </div>
     );
@@ -91,107 +73,87 @@ export default function Contributors() {
   return (
     <>
       <Navbar />
-      <div className="sm:w-[80%] md:w-[90%] lg:w-[70%] xl:w-[80%] 2xl:w-[50%] mx-auto">
-        <div className="">
-          <div className="">
-            {/* Header Section */}
-            <div className="py-30 mt-5 relative mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-5 px-6">
-              <h1 className="text-primary/90 text-4xl font-semibold">
-                {t("contributors.title")}
-              </h1>
-              <p className="max-w-lg text-center text-black/60 font-light">
-                {t("contributors.description")}
-              </p>
-            </div>
+      <main className="bg-gradient-to-b from-[rgba(245,237,230,0.96)] via-[rgba(200,159,133,0.28)] to-[rgba(245,237,230,0.96)] pt-32 pb-24">
+        <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 text-center">
+          <span className="chip-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em]">
+            {t("common.navigation.contributors")}
+          </span>
+          <h1 className="max-w-3xl text-balance text-4xl font-semibold text-[var(--color-espresso)] md:text-5xl">
+            {t("contributors.title")}
+          </h1>
+          <p className="max-w-2xl text-base text-[color:rgba(43,27,18,0.72)] md:text-lg">
+            {t("contributors.description")}
+          </p>
+        </section>
 
-            <div>
-              <div className="bg-zinc-950/5 relative mx-auto flex h-px w-full max-w-lg items-center justify-center gap-2 mb-15">
-                <div className="bg-zinc-950/5 relative mx-auto flex h-px w-full max-w-lg items-center justify-center gap-2">
-                  <div className="rounded-[1px] bg-zinc-100 border border-zinc-950/5 absolute z-50 top-0 left-0 -translate-x-1/2 -translate-y-1/2 size-[10px]"></div>
-                  <div className="rounded-[1px] bg-zinc-100 border border-zinc-950/5 absolute z-50 -bottom-[5px] -right-[5px] size-[10px]"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contributors Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {contributors.map((contributor) => (
-                <a
-                  key={contributor.id}
-                  href={contributor.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white rounded-xl border border-yellow-950/5 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 p-6 flex flex-col items-center group"
-                >
-                  <div className="relative mb-4">
-                    <img
-                      src={contributor.avatar_url}
-                      alt={`${contributor.login}'s avatar`}
-                      className="w-24 h-24 rounded-full border-4 border-yellow-200 group-hover:border-yellow-400 transition-colors duration-300"
-                    />
-                    <div className="absolute -bottom-2 -right-2 bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shadow-lg">
-                      {contributor.contributions}
-                    </div>
+        <section className="mx-auto mt-16 w-full max-w-6xl px-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {contributors.map((contributor) => (
+              <a
+                key={contributor.id}
+                href={contributor.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="surface-card group relative overflow-hidden rounded-3xl p-6 text-center transition hover:-translate-y-1"
+              >
+                <div className="relative mx-auto h-24 w-24">
+                  <img
+                    src={contributor.avatar_url}
+                    alt={`${contributor.login}'s avatar`}
+                    className="h-full w-full rounded-full border border-[rgba(200,159,133,0.4)] object-cover shadow-inner transition group-hover:border-[rgba(200,159,133,0.7)]"
+                  />
+                  <div className="absolute -bottom-1 -right-1 inline-flex min-w-8 items-center justify-center rounded-full bg-[var(--color-coffee)] px-2 py-1 text-xs font-semibold text-[var(--color-cream)] shadow-lg shadow-[rgba(43,27,18,0.3)]">
+                    {contributor.contributions}
                   </div>
-
-                  <h3 className="text-md font-medium text-gray-900 group-hover:text-yellow-600 transition-colors duration-300 text-center">
-                    {contributor.login}
-                  </h3>
-
-                  <p className="text-sm font-light text-zinc-500 mt-1">
-                    {contributor.contributions === 1
-                      ? t("contributors.list.contributionSingular", {
-                          count: contributor.contributions
-                        })
-                      : t("contributors.list.contributionPlural", {
-                          count: contributor.contributions
-                        })}
-                  </p>
-                </a>
-              ))}
-            </div>
-
-            <div>
-              <div className="bg-zinc-950/5 relative mx-auto flex h-px w-full max-w-lg items-center justify-center gap-2 mt-15 mb-15">
-                <div className="bg-zinc-950/5 relative mx-auto flex h-px w-full max-w-lg items-center justify-center gap-2">
-                  <div className="rounded-[1px] bg-zinc-100 border border-zinc-950/5 absolute z-50 top-0 left-0 -translate-x-1/2 -translate-y-1/2 size-[10px]"></div>
-                  <div className="rounded-[1px] bg-zinc-100 border border-zinc-950/5 absolute z-50 -bottom-[5px] -right-[5px] size-[10px]"></div>
                 </div>
-              </div>
-            </div>
-
-            {/* Footer Note */}
-            <div className="border border-zinc-950/5 rounded-4xl relative mx-auto flex w-full py-20 m-20 flex-col items-center justify-center gap-8 px-6 pb-20">
-              <div className="flex flex-col items-center justify-center gap-4 text-center">
-                <h3 className="text-primary/90 text-3xl font-semibold">
-                  {t("contributors.footerTitle")}
+                <h3 className="mt-5 text-base font-semibold text-[var(--color-espresso)] transition group-hover:text-[var(--color-coffee)]">
+                  {contributor.login}
                 </h3>
-                <p className="max-w-xl">
-                  {t("contributors.footerSubtitle")}
+                <p className="mt-2 text-sm text-[color:rgba(43,27,18,0.68)]">
+                  {contributor.contributions === 1
+                    ? t("contributors.list.contributionSingular", {
+                        count: contributor.contributions
+                      })
+                    : t("contributors.list.contributionPlural", {
+                        count: contributor.contributions
+                      })}
                 </p>
-              </div>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-yellow-500 text-white hover:bg-yellow-600 transition-all duration-300 ease-in-out active:scale-[0.93]"
-                >
-                  {t("contributors.button.view")}
-                </a>
-                <button
-                  onClick={() => navigate(`/${activeLanguage}`)}
-                  className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-3 rounded-md gap-1.5 px-5 has-[>svg]:px-3 border border-zinc-950/5 text-black hover:bg-zinc-950/5 transition-all duration-300 ease-in-out active:scale-[0.93]"
-                >
-                  {t("common.actions.backToHome")}
-                </button>
-              </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto mt-24 w-full max-w-5xl px-6">
+          <div className="surface-card rounded-[3rem] px-10 py-16 text-center">
+            <h3 className="text-3xl font-semibold text-[var(--color-espresso)]">
+              {t("contributors.footerTitle")}
+            </h3>
+            <p className="mt-4 text-base text-[color:rgba(43,27,18,0.7)] md:text-lg">
+              {t("contributors.footerSubtitle")}
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a
+                href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold"
+              >
+                {t("contributors.button.view")}
+              </a>
+              <button
+                onClick={() => navigate(`/${activeLanguage}`)}
+                className="btn-outline inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold"
+              >
+                {t("common.actions.backToHome")}
+              </button>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
       <Footer />
     </>
   );
-}
+};
+
+export default Contributors;

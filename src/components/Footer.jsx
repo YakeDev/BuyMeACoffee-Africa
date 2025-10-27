@@ -21,115 +21,153 @@ const Footer = () => {
   );
 
   return (
-    <footer>
-            <div className="border-t border-zinc-950/20 bg-zinc-950/2 px-3 pt-10 pb-5 flex items-center justify-between mt-10">
-                <div className="sm:w-[80%] md:w-[90%] lg:w-[70%] xl:w-[80%] 2xl:w-[50%] mx-auto">
-                    <div className="grid grid-cols-2 gap-6 justify-between">
-                        {/* Logo + Description + Réseaux */}
-                        <div className="flex flex-col gap-4">
-                            <Link to={withLanguagePrefix("/")} className="flex items-center gap-2">
-                                      <div className="flex items-center gap-2">
-                                        <span className="">
-                                        <img src={Logo} alt="" width={45} /></span>
-                                        <div className="font-black text-[20px]">
-                                          <span>BuyMeA</span>
-                                          <span className="text-yellow-500">Coffee</span>
-                                        </div>
-                                      </div>
-                                    </Link>
+    <footer className="border-t border-[rgba(107,62,38,0.14)] bg-[rgba(245,237,230,0.9)] backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-16 text-[color:rgba(43,27,18,0.72)]">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="space-y-6">
+            <Link to={withLanguagePrefix("/")} className="flex items-center gap-3">
+              <span className="inline-flex size-12 items-center justify-center rounded-3xl bg-[rgba(107,62,38,0.08)] shadow-inner">
+                <img src={Logo} alt="" width={32} height={32} />
+              </span>
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-latte)]">
+                  BuyMeACoffee
+                </span>
+                <span className="text-xl font-semibold text-[var(--color-espresso)]">Africa</span>
+              </div>
+            </Link>
 
-                            <p className="text-sm text-zinc-600 leading-relaxed">{t("footer.description")}</p>
+            <p className="max-w-sm text-sm leading-relaxed text-[color:rgba(43,27,18,0.68)]">
+              {t("footer.description")}
+            </p>
 
-                            <ul className="flex items-center gap-4 mt-2">
-                                <li>
-                                    <a href={withLanguagePrefix("/")} className="hover:text-yellow-600 transition">
-                                        <Github className="w-5 h-5" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:julesmukadi.dev@gmail.com" className="hover:text-yellow-600 transition">
-                                        <Mail className="w-5 h-5" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={withLanguagePrefix("/")} className="hover:text-yellow-600 transition">
-                                        <Linkedin className="w-5 h-5" />
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="grid grid-cols-2 gap-6 text-sm">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="capitalize text-lg font-medium">{t("common.navigation.resources")}</h3>
-                                <ul className="flex flex-col gap-2">
-                                    <li>
-                                        <Link to={withLanguagePrefix("/about")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.about")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/blog")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.blog")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/dev")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.developers")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/team")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.team")}
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+            <ul className="flex items-center gap-4 text-[rgba(107,62,38,0.7)]">
+              <li>
+                <a
+                  href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex size-10 items-center justify-center rounded-2xl border border-[rgba(107,62,38,0.18)] bg-[rgba(245,237,230,0.7)] shadow-sm transition hover:border-[rgba(107,62,38,0.35)] hover:text-[var(--color-espresso)]"
+                >
+                  <Github className="size-4" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:julesmukadi.dev@gmail.com"
+                  className="inline-flex size-10 items-center justify-center rounded-2xl border border-[rgba(107,62,38,0.18)] bg-[rgba(245,237,230,0.7)] shadow-sm transition hover:border-[rgba(107,62,38,0.35)] hover:text-[var(--color-espresso)]"
+                >
+                  <Mail className="size-4" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex size-10 items-center justify-center rounded-2xl border border-[rgba(107,62,38,0.18)] bg-[rgba(245,237,230,0.7)] shadow-sm transition hover:border-[rgba(107,62,38,0.35)] hover:text-[var(--color-espresso)]"
+                >
+                  <Linkedin className="size-4" />
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                            <div className="flex flex-col gap-2">
-                                <h3 className="capitalize font-medium text-lg">{t("common.navigation.company")}</h3>
-                                <ul className="flex flex-col gap-2">
-                                    {/* <li>
-                                        <Link to="/support" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">contacter support</Link>
-                                    </li> */}
-                                    <li>
-                                        <Link to={withLanguagePrefix("/help")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.help")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/privacy")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.privacy")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/terms")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.terms")}
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to={withLanguagePrefix("/license")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
-                                          {t("common.navigation.license")}
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-latte)]">
+              {t("common.navigation.resources")}
+            </h3>
+            <ul className="space-y-3 text-sm font-medium text-[color:rgba(43,27,18,0.7)]">
+              <li>
+                <Link
+                  to={withLanguagePrefix("/about")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.about")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/blog")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.blog")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/dev")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.developers")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/team")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.team")}
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-                    <div className="flex items-center justify-between mt-10 text-sm border-t border-zinc-950/5 pt-4">
-                        <div className="">
-                            <span>{t("dates.yearlyCopyright", { year: currentYear })}</span>
-                        </div>
-                        <div className="flex gap-1 justify-end items-center">
-                            <span className="capitalize">{t("common.layout.by")}</span>
-                            <Link to={withLanguagePrefix("/contributors")} className="flex items-center gap-1 hover:text-yellow-500 transition duration-300 underline underline-offset-2">
-                                <span className="uppercase font-bold">{t("common.navigation.contributors")}</span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-latte)]">
+              {t("common.navigation.company")}
+            </h3>
+            <ul className="space-y-3 text-sm font-medium text-[color:rgba(43,27,18,0.7)]">
+              <li>
+                <Link
+                  to={withLanguagePrefix("/help")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.help")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/privacy")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.privacy")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/terms")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.terms")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={withLanguagePrefix("/license")}
+                  className="transition hover:text-[var(--color-espresso)]"
+                >
+                  {t("common.navigation.license")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-[rgba(107,62,38,0.12)] pt-6 text-sm text-[color:rgba(43,27,18,0.6)] md:flex-row">
+          <span>{t("dates.yearlyCopyright", { year: currentYear })}</span>
+          <div className="flex items-center gap-2">
+            <span>{t("common.layout.by")}</span>
+            <Link
+              to={withLanguagePrefix("/contributors")}
+              className="font-semibold uppercase tracking-[0.24em] text-[var(--color-espresso)] transition hover:text-[var(--color-coffee)]"
+            >
+              {t("common.navigation.contributors")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

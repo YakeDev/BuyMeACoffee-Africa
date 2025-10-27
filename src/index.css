@@ -1,5 +1,100 @@
 @import "tailwindcss";
 
-*{
-    font-family: 'Poppins', sans-serif;
+:root {
+  color-scheme: light;
+  --color-coffee: #6B3E26;
+  --color-latte: #C89F85;
+  --color-cream: #F5EDE6;
+  --color-espresso: #2B1B12;
+  --color-honey: #E1A948;
+  --shadow-soft: 0 24px 60px rgba(43, 27, 18, 0.08);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  --gradient-app: linear-gradient(180deg, rgba(245, 237, 230, 0.95) 0%, rgba(200, 159, 133, 0.32) 50%, #f5ede6 100%);
+  font-family: var(--font-base, "Poppins"), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--gradient-app);
+  color: var(--color-espresso);
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--color-honey);
+  color: var(--color-espresso);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.surface-blur {
+  background: rgba(245, 237, 230, 0.88);
+  border: 1px solid rgba(107, 62, 38, 0.14);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.surface-card {
+  background: rgba(245, 237, 230, 0.95);
+  border: 1px solid rgba(107, 62, 38, 0.12);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+}
+
+.chip-badge {
+  background: rgba(200, 159, 133, 0.2);
+  border: 1px solid rgba(200, 159, 133, 0.45);
+  box-shadow: var(--shadow-inner);
+  color: var(--color-espresso);
+}
+
+.btn-primary {
+  background: var(--color-coffee);
+  color: var(--color-cream);
+  box-shadow: 0 18px 36px rgba(107, 62, 38, 0.25);
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.btn-primary:hover {
+  background: #583220;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(200, 159, 133, 0.18);
+  color: var(--color-coffee);
+  border: 1px solid rgba(200, 159, 133, 0.5);
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 159, 133, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(107, 62, 38, 0.2);
+  background: rgba(245, 237, 230, 0.7);
+  color: var(--color-espresso);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.btn-outline:hover {
+  border-color: rgba(107, 62, 38, 0.4);
+  background: rgba(245, 237, 230, 0.92);
 }
