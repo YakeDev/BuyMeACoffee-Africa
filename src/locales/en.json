@@ -11,7 +11,9 @@
       "backToHome": "Back to home",
       "viewOnGithub": "View on GitHub",
       "darkMode": "Dark",
-      "lightMode": "Light"
+      "lightMode": "Light",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
     },
     "status": {
       "underConstruction": "Under construction",
