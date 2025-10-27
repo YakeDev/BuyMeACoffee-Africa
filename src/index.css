@@ -1,5 +1,204 @@
 @import "tailwindcss";
 
-*{
-    font-family: 'Poppins', sans-serif;
+:root {
+  color-scheme: light dark;
+  font-family: var(--font-base, "Inter"), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--color-cream);
+  color: var(--text-primary);
+  --shadow-soft: 0 24px 60px rgba(43, 27, 18, 0.08);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  --surface-blur-bg: rgba(245, 237, 230, 0.88);
+  --surface-blur-border: rgba(107, 62, 38, 0.14);
+  --surface-card-bg: rgba(245, 237, 230, 0.95);
+  --surface-card-border: rgba(107, 62, 38, 0.12);
+  --chip-bg: rgba(200, 159, 133, 0.2);
+  --chip-border: rgba(200, 159, 133, 0.45);
+  --btn-secondary-bg: rgba(200, 159, 133, 0.18);
+  --btn-secondary-border: rgba(200, 159, 133, 0.5);
+  --btn-outline-border: rgba(107, 62, 38, 0.2);
+  --btn-outline-bg: rgba(245, 237, 230, 0.7);
+  --gradient-app: linear-gradient(180deg, rgba(245, 237, 230, 0.95) 0%, rgba(200, 159, 133, 0.32) 50%, #f5ede6 100%);
+  --surface-footer-bg: rgba(245, 237, 230, 0.9);
+  --surface-footer-border: rgba(107, 62, 38, 0.18);
+  --surface-footer-icon-bg: rgba(245, 237, 230, 0.7);
+  --surface-footer-icon-border: rgba(107, 62, 38, 0.18);
+  --surface-footer-icon-hover-border: rgba(107, 62, 38, 0.35);
+  --text-primary: var(--color-espresso);
+  --text-secondary: rgba(43, 27, 18, 0.72);
+  --text-muted: rgba(43, 27, 18, 0.68);
+  --text-subtle: rgba(43, 27, 18, 0.6);
+}
+
+:root[data-theme="dark"] {
+  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.32);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --surface-blur-bg: rgba(43, 27, 18, 0.78);
+  --surface-blur-border: rgba(225, 169, 72, 0.26);
+  --surface-card-bg: rgba(43, 27, 18, 0.88);
+  --surface-card-border: rgba(225, 169, 72, 0.18);
+  --chip-bg: rgba(225, 169, 72, 0.18);
+  --chip-border: rgba(225, 169, 72, 0.45);
+  --btn-secondary-bg: rgba(225, 169, 72, 0.12);
+  --btn-secondary-border: rgba(225, 169, 72, 0.38);
+  --btn-outline-border: rgba(225, 169, 72, 0.28);
+  --btn-outline-bg: rgba(43, 27, 18, 0.75);
+  --gradient-app: radial-gradient(circle at top, rgba(200, 159, 133, 0.28), transparent 40%), linear-gradient(180deg, rgba(43, 27, 18, 0.98) 0%, rgba(43, 27, 18, 0.92) 50%, rgba(107, 62, 38, 0.8) 100%);
+  --surface-footer-bg: rgba(43, 27, 18, 0.85);
+  --surface-footer-border: rgba(225, 169, 72, 0.26);
+  --surface-footer-icon-bg: rgba(43, 27, 18, 0.65);
+  --surface-footer-icon-border: rgba(225, 169, 72, 0.28);
+  --surface-footer-icon-hover-border: rgba(225, 169, 72, 0.45);
+  --text-primary: var(--color-espresso);
+  --text-secondary: rgba(250, 244, 237, 0.82);
+  --text-muted: rgba(250, 244, 237, 0.68);
+  --text-subtle: rgba(250, 244, 237, 0.55);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--gradient-app);
+  color: var(--text-primary);
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10%;
+  background-image: radial-gradient(circle at 25% 25%, rgba(225, 169, 72, 0.06), transparent 45%),
+    radial-gradient(circle at 75% 15%, rgba(200, 159, 133, 0.08), transparent 50%),
+    radial-gradient(circle at 50% 75%, rgba(107, 62, 38, 0.06), transparent 46%);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+}
+
+* {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: var(--font-heading, "Inter Tight"), "Inter", "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: var(--color-honey);
+  color: var(--color-espresso);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.surface-blur {
+  background: var(--surface-blur-bg);
+  border: 1px solid var(--surface-blur-border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.surface-card {
+  background: var(--surface-card-bg);
+  border: 1px solid var(--surface-card-border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.surface-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+}
+
+.chip-badge {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  box-shadow: var(--shadow-inner);
+  color: var(--color-espresso);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.chip-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background: var(--color-coffee);
+  color: var(--color-cream);
+  box-shadow: 0 18px 36px rgba(107, 62, 38, 0.25);
+  transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--color-coffee) 88%, black);
+  transform: translateY(-1px);
+  box-shadow: 0 22px 48px rgba(107, 62, 38, 0.28);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--color-coffee);
+  border: 1px solid var(--btn-secondary-border);
+  transition: background 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 159, 133, 0.28);
+  border-color: rgba(200, 159, 133, 0.65);
+  transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .btn-secondary {
+  color: var(--color-espresso);
+}
+
+.btn-outline {
+  border: 1px solid var(--btn-outline-border);
+  background: var(--btn-outline-bg);
+  color: var(--color-espresso);
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.btn-outline:hover {
+  border-color: rgba(107, 62, 38, 0.4);
+  background: rgba(245, 237, 230, 0.92);
+  transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .btn-outline:hover {
+  background: rgba(43, 27, 18, 0.95);
+  border-color: rgba(225, 169, 72, 0.55);
+}
+
+.icon-accent {
+  color: var(--color-honey);
+}
+
+.page-shell {
+  animation: fade-in 320ms ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
