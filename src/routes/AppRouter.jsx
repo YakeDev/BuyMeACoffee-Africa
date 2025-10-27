@@ -9,6 +9,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile";
 import GitHubCallback from "../components/GitHubCallback";
 import NotFound from "../pages/NotFound";
+import Privacy from "../pages/Privacy";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="/privacy" element={<Privacy />} />
 
         {/* Routes privées - protégées par AuthContext */}
         <Route element={<PrivateRoutes />}>
