@@ -1,72 +1,75 @@
 // import React, { useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-// import { useAuth } from "../context/AuthContext";
 import { FaGithubAlt, FaGoogle } from "react-icons/fa";
-import { useI18n } from "../context/I18nContext";
+import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
 
 const Register = () => {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
+  const activeLanguage = language ?? FALLBACK_LANGUAGE;
+
+  const withLanguagePrefix = useMemo(
+    () => (targetPath) => {
+      const sanitizedPath = targetPath.startsWith("/") ? targetPath.slice(1) : targetPath;
+      if (!sanitizedPath) {
+        return `/${activeLanguage}`;
+      }
+      return `/${activeLanguage}/${sanitizedPath}`;
+    },
+    [activeLanguage]
+  );
 
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
   };
 
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-16">
-      <div className="w-full max-w-md mx-auto text-center">
-        <div className="mb-6 text-left">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-yellow-500 transition"
-          >
-            {t("common.actions.backToHome")}
-          </Link>
-        </div>
+	return (
+		<div className="page-shell relative min-h-screen bg-gradient-to-b from-[rgba(245,237,230,0.94)] via-[rgba(200,159,133,0.25)] to-[rgba(245,237,230,0.94)] px-6 py-20">
+      <div className="absolute inset-x-0 top-0 -z-10 h-56 bg-gradient-to-b from-[rgba(245,237,230,0.95)] via-transparent to-transparent" />
+      <div className="mx-auto flex w-full max-w-md flex-col gap-8 text-center">
+        <Link
+          to={withLanguagePrefix("/")}
+          className="self-start text-sm font-medium text-[var(--color-coffee)] transition hover:text-[var(--color-espresso)]"
+        >
+          {t("common.actions.backToHome")}
+        </Link>
 
-        <h1 className="text-black/75 text-3xl font-bold mb-2">{t("register.title")}</h1>
-        <p className="text-black/60 text-sm mb-6">{t("register.subtitle")}</p>
+	        <div className="surface-card rounded-3xl p-10">
+	          <h1 className="font-heading text-3xl font-semibold text-[var(--text-primary)]">{t("register.title")}</h1>
+	          <p className="mt-2 text-sm text-[var(--text-secondary)]">{t("register.subtitle")}</p>
 
-        <div className="p-6 bg-white border border-zinc-200 rounded-2xl shadow-sm">
-          <div className="flex flex-col gap-4">
-            <button
-              onClick={handleGitHubLogin}
-              className="flex items-center cursor-pointer justify-center w-full py-3 px-4 border border-zinc-200 rounded-lg shadow-xs hover:shadow-sm hover:bg-zinc-950/5 transition-all duration-300"
-            >
-              <FaGithubAlt className="text-2xl mr-3" />
-              <span className="text-zinc-800 font-normal">
-                {t("register.github")}
-              </span>
-            </button>
+          <div className="mt-8 flex flex-col gap-4">
+	            <button
+	              onClick={handleGitHubLogin}
+	              className="btn-primary flex items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold"
+	            >
+	              <FaGithubAlt className="icon-accent text-lg" />
+	              {t("register.github")}
+	            </button>
 
-            <div className="flex items-center gap-3 mt-2 mb-1">
-              <div className="h-px bg-zinc-300 flex-1" />
-              <span className="text-sm font-light text-zinc-400">
-                {t("register.divider")}
-              </span>
-              <div className="h-px bg-zinc-300 flex-1" />
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-[rgba(107,62,38,0.55)]">
+              <span className="flex-1 border-t border-[rgba(200,159,133,0.4)]" />
+              {t("register.divider")}
+              <span className="flex-1 border-t border-[rgba(200,159,133,0.4)]" />
             </div>
 
-            <button className="flex items-center cursor-not-allowed justify-center w-full py-3 px-4 border border-zinc-200 rounded-lg shadow-xs transition-all duration-200">
-              <FaGoogle className="text-lg ml-2 mr-4" />
-              <span className="text-zinc-800 font-normal">
-                {t("register.google")}
-              </span>
+	            <button className="btn-secondary flex cursor-not-allowed items-center justify-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold">
+	              <FaGoogle className="icon-accent text-base" />
+              {t("register.google")}
             </button>
           </div>
 
-          <div className="mt-6 text-center">
-            <p className="text-black/60 text-sm">
-              {t("register.cta.question")} {" "}
-              <Link
-                to="/login"
-                className="text-yellow-600 hover:text-yellow-700 font-medium"
-              >
-                {t("register.cta.action")}
-              </Link>
-            </p>
+	          <div className="mt-8 rounded-2xl bg-[rgba(200,159,133,0.12)] px-4 py-3 text-sm text-[var(--text-muted)]">
+            {t("register.cta.question")}{" "}
+            <Link
+              to={withLanguagePrefix("/login")}
+              className="font-semibold text-[var(--color-coffee)] transition hover:text-[var(--color-espresso)]"
+            >
+              {t("register.cta.action")}
+            </Link>
           </div>
         </div>
       </div>
