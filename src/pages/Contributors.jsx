@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
 import DecorativeBar from "../components/DecorativeBar";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { useI18n } from "../context/I18nContext";
 
 export default function Contributors() {
   const [contributors, setContributors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const fetchContributors = async () => {
@@ -21,14 +23,15 @@ export default function Contributors() {
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch contributors");
+          throw new Error("FETCH_CONTRIBUTORS_FAILED");
         }
 
         const data = await response.json();
         setContributors(data);
         setError(null);
       } catch (err) {
-        setError(err.message);
+        console.error(err);
+        setError(err?.message === "FETCH_CONTRIBUTORS_FAILED" ? "fetch" : "general");
       } finally {
         setLoading(false);
       }
@@ -43,7 +46,7 @@ export default function Contributors() {
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-600"></div>
           <p className="mt-4 text-gray-700 font-medium">
-            Loading contributors...
+            {t("common.status.loadingContributors")}
           </p>
         </div>
       </div>
@@ -69,9 +72,13 @@ export default function Contributors() {
               />
             </svg>
             <h2 className="text-xl font-bold mb-2">
-              Error Loading Contributors
+              {t("contributors.errors.title")}
             </h2>
-            <p className="text-gray-600">{error}</p>
+            <p className="text-gray-600">
+              {error === "fetch"
+                ? t("contributors.errors.fetch")
+                : t("contributors.errors.general")}
+            </p>
           </div>
         </div>
       </div>
@@ -87,12 +94,10 @@ export default function Contributors() {
             {/* Header Section */}
             <div className="py-30 mt-5 relative mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-5 px-6">
               <h1 className="text-primary/90 text-4xl font-semibold">
-                Our Amazing Contributors 😎
+                {t("contributors.title")}
               </h1>
               <p className="max-w-lg text-center text-black/60 font-light">
-                Thank you to all the wonderful people who have contributed to
-                BuyMeACoffee-Africa! Your contributions make this project
-                possible.
+                {t("contributors.description")}
               </p>
             </div>
 
@@ -131,8 +136,13 @@ export default function Contributors() {
                   </h3>
 
                   <p className="text-sm font-light text-zinc-500 mt-1">
-                    {contributor.contributions} contribution
-                    {contributor.contributions !== 1 ? "s" : ""}
+                    {contributor.contributions === 1
+                      ? t("contributors.list.contributionSingular", {
+                          count: contributor.contributions
+                        })
+                      : t("contributors.list.contributionPlural", {
+                          count: contributor.contributions
+                        })}
                   </p>
                 </a>
               ))}
@@ -151,10 +161,10 @@ export default function Contributors() {
             <div className="border border-zinc-950/5 rounded-4xl relative mx-auto flex w-full py-20 m-20 flex-col items-center justify-center gap-8 px-6 pb-20">
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <h3 className="text-primary/90 text-3xl font-semibold">
-                  Ready to contribute?
+                  {t("contributors.footerTitle")}
                 </h3>
                 <p className="max-w-xl">
-                  Want to see your name here? Check out our GitHub repository and start contributing today!
+                  {t("contributors.footerSubtitle")}
                 </p>
               </div>
               <div className="flex gap-4">
@@ -164,13 +174,13 @@ export default function Contributors() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-yellow-500 text-white hover:bg-yellow-600 transition-all duration-300 ease-in-out active:scale-[0.93]"
                 >
-                  View on Github
+                  {t("contributors.button.view")}
                 </a>
                 <button
                   onClick={() => window.location.href = "/"}
                   className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-3 rounded-md gap-1.5 px-5 has-[>svg]:px-3 border border-zinc-950/5 text-black hover:bg-zinc-950/5 transition-all duration-300 ease-in-out active:scale-[0.93]"
                 >
-                  Back to home
+                  {t("common.actions.backToHome")}
                 </button>
               </div>
             </div>

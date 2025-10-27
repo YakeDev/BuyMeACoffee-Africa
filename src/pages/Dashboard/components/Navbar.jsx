@@ -1,4 +1,8 @@
+import { useI18n } from "../../../context/I18nContext";
+
 const Navbar = () => {
+  const { t } = useI18n();
+
   return (
     <nav className="bg-white shadow">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -8,7 +12,7 @@ const Navbar = () => {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="shrink-0">
-              <h1 className="text-xl font-bold">Dashboard</h1>
+              <h1 className="text-xl font-bold">{t("dashboard.title")}</h1>
             </div>
           </div>
         </div>

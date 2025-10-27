@@ -1,0 +1,145 @@
+{
+  "common": {
+    "language": {
+      "label": "Language",
+      "english": "English",
+      "french": "Français"
+    },
+    "actions": {
+      "goToApp": "Go to app",
+      "getStarted": "Get started free",
+      "backToHome": "Back to home",
+      "viewOnGithub": "View on GitHub"
+    },
+    "status": {
+      "underConstruction": "Under construction",
+      "loadingContributors": "Loading contributors..."
+    },
+    "layout": {
+      "by": "by"
+    },
+    "navigation": {
+      "resources": "Resources",
+      "company": "Company",
+      "help": "Help",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "license": "License",
+      "about": "About",
+      "blog": "Blog",
+      "developers": "Developers",
+      "team": "Team",
+      "contributors": "Contributors"
+    }
+  },
+  "navbar": {
+    "contributors": {
+      "singular": "{count} Contributor",
+      "plural": "{count} Contributors"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Bring your ideas to life. Support and collaborate with Africa's talent.",
+      "subtitle": "We are currently developing our app to provide you with the best possible experience. It will be available soon!"
+    },
+    "about": {
+      "badge": "How it works",
+      "title": "With us, appointment scheduling is easy",
+      "subtitle": "Effortless scheduling for businesses and individuals, powerful solutions for fast-growing modern companies.",
+      "steps": {
+        "one": {
+          "title": "Create your creator profile",
+          "description": "Sign up for free and customize your page to showcase your work, your story, and your projects."
+        },
+        "two": {
+          "title": "Share your link with your community",
+          "description": "Copy your unique link and share it on social media, your website, or directly via message."
+        },
+        "three": {
+          "title": "Receive support and grow your ideas",
+          "description": "Every contribution brings you closer to your goal. Turn your creative energy into real impact thanks to the generosity of your community 💛."
+        }
+      }
+    }
+  },
+  "contributors": {
+    "title": "Our Amazing Contributors 😎",
+    "description": "Thank you to all the wonderful people who have contributed to BuyMeACoffee-Africa! Your contributions make this project possible.",
+    "button": {
+      "view": "View on GitHub",
+      "back": "Back to home"
+    },
+    "footerTitle": "Ready to contribute?",
+    "footerSubtitle": "Want to see your name here? Check out our GitHub repository and start contributing today!",
+    "list": {
+      "contributionSingular": "{count} contribution",
+      "contributionPlural": "{count} contributions"
+    },
+    "errors": {
+      "title": "Error Loading Contributors",
+      "general": "Something went wrong while loading contributors.",
+      "fetch": "Failed to fetch contributors."
+    }
+  },
+  "footer": {
+    "description": "A community-led platform supporting creators across Africa."
+  },
+  "login": {
+    "title": "Welcome back",
+    "github": "Continue with GitHub",
+    "google": "Continue with Google",
+    "divider": "or connect with",
+    "cta": {
+      "question": "Don’t have an account?",
+      "action": "Sign up"
+    }
+  },
+  "register": {
+    "title": "Sign up",
+    "subtitle": "Join BuyMeACoffee-Africa",
+    "github": "Continue with GitHub",
+    "google": "Continue with Google",
+    "divider": "or connect with",
+    "cta": {
+      "question": "Already have an account?",
+      "action": "Log in"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "menu": "Menu",
+    "links": {
+      "overview": "Overview",
+      "settings": "Settings"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Get a quick overview of your account."
+    },
+    "donations": {
+      "title": "Donations",
+      "description": "Manage your donations here."
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your profile settings here."
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage your account settings here."
+    }
+  },
+  "profile": {
+    "title": "User profile",
+    "name": "Name",
+    "email": "Email",
+    "notSet": "Not set"
+  },
+  "auth": {
+    "githubCallback": "Processing GitHub login..."
+  },
+  "dates": {
+    "yearlyCopyright": "© {year} BuyMeACoffee-Africa. All rights reserved."
+  }
+}
