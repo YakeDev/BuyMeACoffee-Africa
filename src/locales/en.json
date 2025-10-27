@@ -2,8 +2,8 @@
   "common": {
     "language": {
       "label": "Language",
-      "english": "English",
-      "french": "Français"
+      "english": "🇬🇧",
+      "french": "🇫🇷"
     },
     "actions": {
       "goToApp": "Go to app",

@@ -60,27 +60,35 @@ const Navbar = () => {
 
         <div className="">
           <ul className="flex items-center gap-3">
-            <li>
-              <label className="sr-only" htmlFor="language-selector">
+            <li className="relative">
+              <label className="sr-only" htmlFor="language-toggle">
                 {t("common.language.label")}
               </label>
-              <select
-                id="language-selector"
-                className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium border border-zinc-950/5 bg-white text-zinc-950 hover:bg-zinc-50 transition-all duration-300 ease-in-out py-2 px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
-                value={language}
-                onChange={handleLanguageChange}
+
+              <button
+                id="language-toggle"
+                onClick={() => {
+                  // Si tu veux alterner entre anglais et français :
+                  const nextLang =
+                    language === "en"
+                      ? "fr"
+                      : language === "fr"
+                      ? "en"
+                      : availableLanguages[0];
+                  handleLanguageChange({ target: { value: nextLang } });
+                }}
+                className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-white text-zinc-950 hover:bg-zinc-50 transition-all duration-300 ease-in-out active:scale-[0.93]"
               >
-                {availableLanguages.map((code) => (
-                  <option key={code} value={code}>
-                    {code === "en"
-                      ? t("common.language.english")
-                      : code === "fr"
-                        ? t("common.language.french")
-                        : code.toUpperCase()}
-                  </option>
-                ))}
-              </select>
+                <span className="capitalize">
+                  {language === "en"
+                    ? t("common.language.english")
+                    : language === "fr"
+                    ? t("common.language.french")
+                    : language.toUpperCase()}
+                </span>
+              </button>
             </li>
+
             <li>
               <Link
                 to="/contributors"
