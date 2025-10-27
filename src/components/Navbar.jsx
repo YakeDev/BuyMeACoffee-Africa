@@ -1,11 +1,38 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useI18n } from "../context/I18nContext";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 import Logo from "/logo-v5.webp";
 
 const Navbar = () => {
   const [contributors, setContributors] = useState([]);
   const { t, language, setLanguage, availableLanguages } = useI18n();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activeLanguage = language ?? FALLBACK_LANGUAGE;
+
+  const withLanguagePrefix = useCallback(
+    (targetPath) => {
+      const sanitizedPath = targetPath.startsWith("/") ? targetPath.slice(1) : targetPath;
+      if (!sanitizedPath) {
+        return `/${activeLanguage}`;
+      }
+      return `/${activeLanguage}/${sanitizedPath}`;
+    },
+    [activeLanguage]
+  );
+
+  const buildPathForLanguage = useCallback(
+    (nextLanguage) => {
+      const segments = location.pathname.split("/").filter(Boolean);
+      if (segments.length === 0) {
+        return `/${nextLanguage}`;
+      }
+      const [, ...rest] = segments;
+      return rest.length > 0 ? `/${[nextLanguage, ...rest].join("/")}` : `/${nextLanguage}`;
+    },
+    [location.pathname]
+  );
 
   useEffect(() => {
     const fetchContributors = async () => {
@@ -40,13 +67,22 @@ const Navbar = () => {
     const nextLanguage = event.target.value;
     if (availableLanguages.includes(nextLanguage)) {
       setLanguage(nextLanguage);
+      const nextPath = buildPathForLanguage(nextLanguage);
+      navigate(
+        {
+          pathname: nextPath,
+          search: location.search,
+          hash: location.hash
+        },
+        { replace: false }
+      );
     }
   };
 
   return (
     <header className="sm:w-[80%] md:w-[90%] lg:w-[70%] xl:w-[80%] 2xl:w-[55%] mx-auto fixed left-0 top-0 right-0 z-50">
       <nav className="flex items-center justify-between py-2 border border-zinc-950/5 bg-zinc-950/2 backdrop-blur-md rounded-2xl px-3 mt-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to={withLanguagePrefix("/")} className="flex items-center gap-2">
           <div className="flex items-center gap-2">
             <span className="">
               <img src={Logo} alt="" width={45} />
@@ -80,18 +116,18 @@ const Navbar = () => {
                 className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-white text-zinc-950 hover:bg-zinc-50 transition-all duration-300 ease-in-out active:scale-[0.93]"
               >
                 <span className="capitalize">
-                  {language === "en"
+                  {activeLanguage === "en"
                     ? t("common.language.english")
-                    : language === "fr"
+                    : activeLanguage === "fr"
                     ? t("common.language.french")
-                    : language.toUpperCase()}
+                    : activeLanguage.toUpperCase()}
                 </span>
               </button>
             </li>
 
             <li>
               <Link
-                to="/contributors"
+                to={withLanguagePrefix("/contributors")}
                 className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-white text-zinc-950 hover:bg-zinc-50 transition-all duration-300 ease-in-out active:scale-[0.93]"
               >
                 <div className="">
@@ -101,7 +137,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/login"
+                to={withLanguagePrefix("/login")}
                 className="inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 aria-invalid:border-destructive select-none py-2 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 border border-zinc-950/5 bg-yellow-500 text-white hover:bg-yellow-600 transition-all duration-300 ease-in-out active:scale-[0.93]"
               >
                 {t("common.actions.goToApp")}

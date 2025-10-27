@@ -1,14 +1,26 @@
 // import React, { useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-// import { useAuth } from "../context/AuthContext";
 import { FaGithubAlt, FaGoogle } from "react-icons/fa";
-import { useI18n } from "../context/I18nContext";
+import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_GITHUB_REDIRECT_URI;
 
 const Register = () => {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
+  const activeLanguage = language ?? FALLBACK_LANGUAGE;
+
+  const withLanguagePrefix = useMemo(
+    () => (targetPath) => {
+      const sanitizedPath = targetPath.startsWith("/") ? targetPath.slice(1) : targetPath;
+      if (!sanitizedPath) {
+        return `/${activeLanguage}`;
+      }
+      return `/${activeLanguage}/${sanitizedPath}`;
+    },
+    [activeLanguage]
+  );
 
   const handleGitHubLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user&redirect_uri=${redirectUri}`;
@@ -19,7 +31,7 @@ const Register = () => {
       <div className="w-full max-w-md mx-auto text-center">
         <div className="mb-6 text-left">
           <Link
-            to="/"
+            to={withLanguagePrefix("/")}
             className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-yellow-500 transition"
           >
             {t("common.actions.backToHome")}
@@ -61,7 +73,7 @@ const Register = () => {
             <p className="text-black/60 text-sm">
               {t("register.cta.question")} {" "}
               <Link
-                to="/login"
+                to={withLanguagePrefix("/login")}
                 className="text-yellow-600 hover:text-yellow-700 font-medium"
               >
                 {t("register.cta.action")}

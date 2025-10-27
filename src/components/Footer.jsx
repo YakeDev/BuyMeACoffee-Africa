@@ -1,11 +1,24 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useI18n } from "../context/I18nContext";
+import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 import Logo from "/logo-v5.webp";
 
 const Footer = () => {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const currentYear = new Date().getFullYear();
+  const activeLanguage = language ?? FALLBACK_LANGUAGE;
+
+  const withLanguagePrefix = useMemo(
+    () => (targetPath) => {
+      const sanitizedPath = targetPath.startsWith("/") ? targetPath.slice(1) : targetPath;
+      if (!sanitizedPath) {
+        return `/${activeLanguage}`;
+      }
+      return `/${activeLanguage}/${sanitizedPath}`;
+    },
+    [activeLanguage]
+  );
 
   return (
     <footer>
@@ -14,7 +27,7 @@ const Footer = () => {
                     <div className="grid grid-cols-2 gap-6 justify-between">
                         {/* Logo + Description + Réseaux */}
                         <div className="flex flex-col gap-4">
-                            <Link to="/" className="flex items-center gap-2">
+                            <Link to={withLanguagePrefix("/")} className="flex items-center gap-2">
                                       <div className="flex items-center gap-2">
                                         <span className="">
                                         <img src={Logo} alt="" width={45} /></span>
@@ -29,7 +42,7 @@ const Footer = () => {
 
                             <ul className="flex items-center gap-4 mt-2">
                                 <li>
-                                    <a href="/" className="hover:text-yellow-600 transition">
+                                    <a href={withLanguagePrefix("/")} className="hover:text-yellow-600 transition">
                                         <Github className="w-5 h-5" />
                                     </a>
                                 </li>
@@ -39,7 +52,7 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/" className="hover:text-yellow-600 transition">
+                                    <a href={withLanguagePrefix("/")} className="hover:text-yellow-600 transition">
                                         <Linkedin className="w-5 h-5" />
                                     </a>
                                 </li>
@@ -50,22 +63,22 @@ const Footer = () => {
                                 <h3 className="capitalize text-lg font-medium">{t("common.navigation.resources")}</h3>
                                 <ul className="flex flex-col gap-2">
                                     <li>
-                                        <Link to="/about" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/about")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.about")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/blog" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/blog")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.blog")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/dev" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/dev")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.developers")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/team" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/team")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.team")}
                                         </Link>
                                     </li>
@@ -79,22 +92,22 @@ const Footer = () => {
                                         <Link to="/support" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">contacter support</Link>
                                     </li> */}
                                     <li>
-                                        <Link to="/help" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/help")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.help")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/privacy" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/privacy")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.privacy")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/terms" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/terms")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.terms")}
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/license" className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
+                                        <Link to={withLanguagePrefix("/license")} className="font-medium text-black/60 capitalize hover:text-yellow-600 transition">
                                           {t("common.navigation.license")}
                                         </Link>
                                     </li>
@@ -109,7 +122,7 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-1 justify-end items-center">
                             <span className="capitalize">{t("common.layout.by")}</span>
-                            <Link to="/contributors" className="flex items-center gap-1 hover:text-yellow-500 transition duration-300 underline underline-offset-2">
+                            <Link to={withLanguagePrefix("/contributors")} className="flex items-center gap-1 hover:text-yellow-500 transition duration-300 underline underline-offset-2">
                                 <span className="uppercase font-bold">{t("common.navigation.contributors")}</span>
                             </Link>
                         </div>

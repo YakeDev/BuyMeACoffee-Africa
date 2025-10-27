@@ -141,5 +141,11 @@
   },
   "dates": {
     "yearlyCopyright": "© {year} BuyMeACoffee-Africa. Tous droits réservés."
+  },
+  "errors": {
+    "notFound": {
+      "message": "Nous n'avons pas trouvé la page que vous cherchez.",
+      "cta": "Retour à l'accueil"
+    }
   }
 }

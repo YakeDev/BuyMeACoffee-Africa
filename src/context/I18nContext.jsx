@@ -5,15 +5,39 @@ import en from "../locales/en.json";
 import fr from "../locales/fr.json";
 
 const STORAGE_KEY = "appLanguage";
-const FALLBACK_LANGUAGE = "en";
+export const FALLBACK_LANGUAGE = "en";
 const dictionaries = { en, fr };
 const supportedLanguages = Object.keys(dictionaries);
+export const SUPPORTED_LANGUAGES = supportedLanguages;
 
 const I18nContext = createContext(null);
 
 const getDictionary = (language) => dictionaries[language] ?? dictionaries[FALLBACK_LANGUAGE];
 
+const getLanguageFromPath = () => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  const [, maybeLanguage] = window.location.pathname.split("/");
+
+  if (maybeLanguage && dictionaries[maybeLanguage]) {
+    return maybeLanguage;
+  }
+
+  return null;
+};
+
 const initializeLanguage = () => {
+  const pathLanguage = getLanguageFromPath();
+  if (pathLanguage) {
+    T.setTexts(getDictionary(pathLanguage));
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, pathLanguage);
+    }
+    return pathLanguage;
+  }
+
   if (typeof window !== "undefined") {
     const savedLanguage = window.localStorage.getItem(STORAGE_KEY);
     if (savedLanguage && dictionaries[savedLanguage]) {
