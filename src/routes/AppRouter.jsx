@@ -10,6 +10,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile";
 import GitHubCallback from "../components/GitHubCallback";
 import NotFound from "../pages/NotFound";
+import Privacy from "../pages/Privacy";
 import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 
 const DefaultLanguageRedirect = () => {
@@ -25,7 +26,7 @@ const AppRoutes = () => {
       <Route path="/" element={<DefaultLanguageRedirect />} />
 
       <Route path=":language" element={<LanguageLayout />}>
-        {/* Routes publiques - accessibles sans authentification */}
+        {/* Routes publiques */}
         <Route element={<PublicRoutes />}>
           <Route index element={<Home />} />
           <Route path="contributors" element={<Contributors />} />
@@ -34,7 +35,9 @@ const AppRoutes = () => {
           <Route path="register" element={<Register />} />
         </Route>
 
-        {/* Routes privées - protégées par AuthContext */}
+        <Route path="/privacy" element={<Privacy />} />
+
+        {/* Routes privées */}
         <Route element={<PrivateRoutes />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
@@ -48,12 +51,10 @@ const AppRoutes = () => {
   );
 };
 
-const AppRouter = () => {
-  return (
-    <Router>
-      <AppRoutes />
-    </Router>
-  );
-};
+const AppRouter = () => (
+  <Router>
+    <AppRoutes />
+  </Router>
+);
 
 export default AppRouter;
