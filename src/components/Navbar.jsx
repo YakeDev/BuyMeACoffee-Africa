@@ -100,7 +100,7 @@ const Navbar = () => {
 			<nav className='surface-blur relative mx-auto flex max-w-6xl items-center justify-between rounded-full px-6 py-3 transition-all duration-300'>
 				<Link to={withLanguagePrefix('/')} className='flex items-center gap-3'>
 					<div className='flex items-center gap-2'>
-						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[var(--btn-outline-bg)] shadow-inner'>
+						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[var(--logo-bg)] shadow-inner'>
 							<img src={Logo} alt='' width={32} height={32} />
 						</span>
 						<div className='flex flex-row leading-tight'>
