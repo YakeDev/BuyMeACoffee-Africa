@@ -162,5 +162,113 @@
       "message": "Nous n'avons pas trouvé la page que vous cherchez.",
       "cta": "Retour à l'accueil"
     }
+  },
+  "guide": {
+    "common": {
+      "backToTop": "retour en haut"
+    },
+     "header": {
+      "imageUrl": "/Download premium vector of Cup of cappuccino with tree vector about latte art, coffee cup, coffee, coffee logo, and latte art vector 503390 (1) (1).png",
+      "imageAlt": "Logo",
+      "title": "BuyMeACoffee-Africa",
+      "description_prefix": "Bienvenue sur ",
+      "description_bold": "BuyMeACoffee Africa",
+      "description_suffix": ", une plateforme africaine inspirée par Buy Me a Coffee, qui permet aux créateurs, artistes, développeurs et entrepreneurs de recevoir un soutien financier de leur communauté via Mobile Money (Airtel Money, Orange Money, M-Pesa).", 
+      "exploreDocs": "Explorer la doc »",  
+      "viewDemo": "Voir la démo",  
+      "reportBug": "Signaler un bug",  
+      "requestFeature": "Demander une fonctionnalité"  
+    },
+    "overview": {
+      "title": "Aperçu",  
+      "imageUrl": "/seo.png",
+      "imageAlt": "Capture d'écran de l'aperçu",  
+      "intro": "BuyMeACoffee Africa offre un moyen simple, rapide et local de soutenir vos créateurs préférés.",  
+      "creatorProfile": "Chaque créateur a sa propre page de profil où les visiteurs peuvent :",  
+      "discover": "Découvrir leur travail",  
+      "donate": "Leur envoyer un don",  
+      "encourage": "Les encourager avec un message",  
+      "platform": "La plateforme est 100% web et optimisée pour une utilisation sur mobile, tablette et PC."  
+    },
+    "gettingStarted": {
+      "title": "Démarrage rapide",  
+      "intro": "Pour commencer à soutenir votre créateur préféré, vous devez d'abord :",  
+      "createAccount": {
+        "title": "Créer un compte",  
+        "step1": "Aller sur la page d'accueil",  
+        "step2": "Cliquer sur \"Commencer gratuitement\".",  
+        "step3": "Choisir votre méthode d'inscription via :",  
+        "methodGoogle": "Compte Google (connexion rapide)",  
+        "methodEmail": "adresse e-mail"  
+      },
+      "imageAlt": "Écran de connexion/inscription",  
+      "completeProfile": "Une fois connecté, complétez votre profil avec :",  
+      "profilePic": "Une photo de profil",  
+      "profileBio": "Une courte biographie",  
+      "profileSocial": "Vos liens vers les réseaux sociaux",  
+      "profileMobileMoney": "Votre numéro Mobile Money (pour recevoir les soutiens)"  
+    },
+    "discover": {
+        "title": "Découvrir les créateurs",  
+        "intro": "Depuis la page d'accueil ou le tableau de bord, vous pouvez :",  
+        "explore": "Explorer les créateurs les plus populaires",  
+        "search": "Rechercher un créateur par nom ou catégorie",  
+        "accessProfile": "Accéder à leur profil pour en savoir plus sur eux"  
+    },
+    "support": {
+        "title": "Soutenir un créateur",  
+        "step1": "Aller sur le profil du créateur.",  
+        "step2": "Cliquer sur “Offrir un café”.",  
+        "step3": "Sélectionner le montant à envoyer (ex: 1, 3, ou 5 cafés).",  
+        "step4": "Choisir votre méthode de paiement Mobile Money :",  
+        "methodAirtel": "Airtel Money",
+        "methodOrange": "Orange Money",
+        "methodMpesa": "M-Pesa",
+        "step5": "Confirmer la transaction.",  
+        "confirmation": "Une fois le paiement validé, le créateur reçoit une notification instantanée."  
+    },
+    "dashboard": {
+        "title": "Tableau de bord (pour les créateurs)",  
+        "intro": "Le tableau de bord permet à chaque créateur de :",  
+        "viewBackers": "Voir le montant total des soutiens reçus",  
+        "viewMessages": "Voir les messages de leurs soutiens",  
+        "manageProfile": "Gérer leur profil et leurs informations de paiement",  
+        "downloadReport": "Télécharger un rapport des gains"  
+    },
+    "security": {
+        "title": "Sécurité & Confidentialité",  
+        "payments": "Les paiements sont traités de manière sécurisée via les API Mobile Money.",  
+        "storage": "Aucune information bancaire n'est stockée sur nos serveurs.",  
+        "disablePage": "Les créateurs peuvent désactiver temporairement leur page publique s'ils le souhaitent."  
+    },
+    "faq": {
+      "title": "FAQ — Foire Aux Questions",  
+      "q1": "Q : Puis-je utiliser plusieurs comptes Mobile Money ?",  
+      "a1": "> Pas encore. Un seul compte est associé à chaque profil.",  
+      "q2": "Q : Puis-je retirer mes fonds directement ?",  
+      "a2": "> Oui, les retraits sont effectués automatiquement vers votre compte Mobile Money configuré.",  
+      "q3": "Q : L'application fonctionne-t-elle sur les smartphones ?",  
+      "a3": "> Oui ! L'application est entièrement responsive et optimisée pour tous les écrans."  
+    },
+     "contact": {
+        "title": "Contact & Support",  
+        "intro": "Si vous rencontrez un problème ou souhaitez suggérer une amélioration :",  
+        "email": "Email :",  
+        "discord": "Communauté Discord :",  
+        "discordLinkText": "Rejoindre le serveur"  
+    },
+    "comingSoon": {
+        "title": "Bientôt disponible",  
+        "creditCard": "Intégration des paiements par carte de crédit",  
+        "subscription": "Fonctionnalité \"Abonnement mensuel\"",  
+        "discover": "Section \"Découvrir\" pour mettre en avant les nouveaux créateurs",  
+        "appName": "BuyMeACoffee Africa",
+        "tagline": "Parce que soutenir un créateur devrait être aussi simple que de lui offrir un café."  
+    },
+    "license": {
+      "title": "Licence",  
+      "text": "Distribué sous la licence MIT. Voir",  
+      "moreInfo": "pour plus d'informations."  
+    }
   }
 }
