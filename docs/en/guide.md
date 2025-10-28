@@ -117,7 +117,7 @@ To start **supporting your favourite creator**, you first need to:
  The dashboard allows each creator to:
  
  * View their **total amount of backers received**
- * View messages from their backers**
+ * View **messages from their backers**
  * Manage their **profile and payment information**
  * Download an **earnings report**
    
