@@ -30,7 +30,7 @@ const Footer = () => {
 						<Link
 							to={withLanguagePrefix('/')}
 							className='flex items-center gap-3'>
-							<span className='inline-flex size-12 items-center justify-center rounded-3xl bg-[var(--surface-footer-icon-bg)] shadow-inner'>
+							<span className='inline-flex size-12 items-center justify-center rounded-3xl bg-[var(--logo-bg)] shadow-inner'>
 								<img src={Logo} alt='' width={32} height={32} />
 							</span>
 							<div className='flex flex-row'>
