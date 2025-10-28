@@ -35,7 +35,7 @@ const Guide = () => {
       {/* Changed container: Use flex, wider max-width, gap */}
       <main id="guide-top" className="page-shell pt-32 pb-24 scroll-mt-20">
         {/* MODIFIED container div */}
-        <div className="flex w-full max-w-7xl px-20 gap-30 relative"> {/* Increased gap */}
+        <div className="flex w-full max-w-7xl px-20 gap-32 relative"> {/* Increased gap */}
 
           {/* Sidebar Area */}
           <aside className="hidden lg:block w-60 xl:w-64 sticky top-42 self-start max-h-[calc(100vh-150px)] overflow-y-auto pr-2"> {/* Adjusted top, added max-height/overflow */}
@@ -221,7 +221,7 @@ const Guide = () => {
                 <div>
                   <p className="font-semibold text-[var(--text-primary)]">{t('guide.faq.q1', { defaultValue: 'Q: Can I use multiple Mobile Money accounts?' })}</p>
                   <p className="mt-2 pl-4 border-l-4 border-[var(--surface-card-border)] text-[var(--text-muted)] italic">
-                    {t('guide.faq.a1', { defaultValue: 'Yes, you can configure multiple Mobile Money accounts and select which one to use for withdrawals.' }).replace(/^>\s*/, '')}
+                    {t('guide.faq.a1', { defaultValue: 'Yes, withdrawals are made automatically to your configured Mobile Money account.' }).replace(/^>\s*/, '')}
                   </p>
                 </div>
                  <div>
@@ -294,11 +294,11 @@ const Guide = () => {
               <button
                 onClick={scrollToTop}
                 className="p-3 rounded-full bg-[var(--color-coffee)] text-[var(--color-cream)] shadow-lg
-                         transition duration-200 ease-in-out // Ensure transition is present
-                         hover:bg-[color-mix(in_srgb,var(--color-coffee)_88%,black)] // Darken bg on hover
-                         hover:-translate-y-px // Slightly less movement than -1 if needed, or keep -1
-                         hover:shadow-[0_22px_48px_rgba(107,62,38,0.28)] // More impactful shadow
-                         mr-2 // Keep the margin adjustment if you liked it
+                         transition duration-200 ease-in-out 
+                         hover:bg-[color-mix(in_srgb,var(--color-coffee)_88%,black)] 
+                         hover:-translate-y-px 
+                         hover:shadow-[0_22px_48px_rgba(107,62,38,0.28)]
+                         mr-2
                          pointer-events-auto"
                 aria-label={t('guide.common.backToTop', { defaultValue: 'Back to top' })}
               >
