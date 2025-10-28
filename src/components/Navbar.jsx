@@ -96,7 +96,7 @@ const Navbar = () => {
 		: t('common.actions.openMenu')
 
 	return (
-		<header className='fixed inset-x-0 top-6 z-50'>
+		<header className='fixed inset-x-0 top-6 z-50 px-4'>
 			<nav className='surface-blur relative mx-auto flex max-w-6xl items-center justify-between rounded-full px-6 py-3 transition-all duration-300'>
 				<Link to={withLanguagePrefix('/')} className='flex items-center gap-3'>
 					<div className='flex items-center gap-2'>
