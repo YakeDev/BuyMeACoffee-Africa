@@ -1,4 +1,4 @@
-import { supabase } from "../server/src/lib/supabaseClient";
+import { supabase } from "../src/lib/supabaseClient";
 import AppRouter from "./routes/AppRouter";
 import { useEffect } from "react";
 
