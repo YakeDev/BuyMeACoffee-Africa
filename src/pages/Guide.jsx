@@ -221,7 +221,7 @@ const Guide = () => {
                 <div>
                   <p className="font-semibold text-[var(--text-primary)]">{t('guide.faq.q1', { defaultValue: 'Q: Can I use multiple Mobile Money accounts?' })}</p>
                   <p className="mt-2 pl-4 border-l-4 border-[var(--surface-card-border)] text-[var(--text-muted)] italic">
-                    {t('guide.faq.a2', { defaultValue: 'Yes, withdrawals are made automatically to your configured Mobile Money account.' }).replace(/^>\s*/, '')}
+                    {t('guide.faq.a1', { defaultValue: 'Yes, you can configure multiple Mobile Money accounts and select which one to use for withdrawals.' }).replace(/^>\s*/, '')}
                   </p>
                 </div>
                  <div>
