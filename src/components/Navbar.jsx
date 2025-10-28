@@ -103,7 +103,7 @@ const Navbar = () => {
 						<span className='inline-flex size-11 items-center justify-center rounded-full bg-[var(--logo-bg)] shadow-inner'>
 							<img src={Logo} alt='' width={32} height={32} />
 						</span>
-						<div className='flex flex-row leading-tight'>
+						<div className='md:block hidden flex-row leading-tight'>
 							<span className='font-heading text-xl font-bold tracking-wide text-[var(--text-primary)]'>
 								BuyMeA
 							</span>
