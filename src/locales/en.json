@@ -244,11 +244,11 @@
     "faq": {
       "title": "FAQ — Frequently Asked Questions",
       "q1": "Q: Can I use multiple Mobile Money accounts?",
-      "a1": "> Not yet. Only one account is associated with each profile.",
+      "a1": "Not yet. Only one account is associated with each profile.",
       "q2": "Q: Can I withdraw my funds directly?",
-      "a2": "> Yes, withdrawals are made automatically to your configured Mobile Money account.",
+      "a2": "Yes, withdrawals are made automatically to your configured Mobile Money account.",
       "q3": "Q: Does the app work on smartphones?",
-      "a3": "> Yes! The app is fully responsive and optimized for all screens."
+      "a3": "Yes! The app is fully responsive and optimized for all screens."
     },
     "contact": {
         "title": "Contact & Support",
