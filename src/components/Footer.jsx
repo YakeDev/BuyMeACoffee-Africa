@@ -119,7 +119,7 @@ const Footer = () => {
 						<ul className='space-y-3 text-sm font-medium text-[var(--text-secondary)]'>
 							<li>
 								<Link
-									to={withLanguagePrefix('/help')}
+									to={withLanguagePrefix('/guide')}
 									className='transition hover:text-[var(--text-primary)]'>
 									{t('common.navigation.help')}
 								</Link>

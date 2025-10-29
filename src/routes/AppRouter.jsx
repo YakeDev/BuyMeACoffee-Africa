@@ -12,6 +12,7 @@ import GitHubCallback from "../components/GitHubCallback";
 import NotFound from "../pages/NotFound";
 import Privacy from "../pages/Privacy";
 import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
+import Guide from "../pages/Guide";
 
 const DefaultLanguageRedirect = () => {
   const { language } = useI18n();
@@ -33,6 +34,7 @@ const AppRoutes = () => {
           <Route path="login" element={<Login />} />
           <Route path="auth/github/callback" element={<GitHubCallback />} />
           <Route path="register" element={<Register />} />
+          <Route path="guide" element={<Guide />} />
         </Route>
 
         <Route path="privacy" element={<Privacy />} />
