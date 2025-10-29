@@ -95,7 +95,6 @@ const License = () => {
                   <ul className="text-sm text-blue-800 space-y-2">
                     <li>• Include the original license</li>
                     <li>• Include the copyright notice</li>
-                    <li>• State significant changes made</li>
                   </ul>
                 </div>
               </div>
