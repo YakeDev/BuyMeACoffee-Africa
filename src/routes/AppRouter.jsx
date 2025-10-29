@@ -11,6 +11,7 @@ import Profile from "../pages/Profile";
 import GitHubCallback from "../components/GitHubCallback";
 import NotFound from "../pages/NotFound";
 import Privacy from "../pages/Privacy";
+import License from "../pages/License";
 import { FALLBACK_LANGUAGE, useI18n } from "../context/I18nContext";
 import Guide from "../pages/Guide";
 
@@ -38,6 +39,7 @@ const AppRoutes = () => {
         </Route>
 
         <Route path="privacy" element={<Privacy />} />
+        <Route path="license" element={<License />} />
 
         {/* Routes privées */}
         <Route element={<PrivateRoutes />}>
