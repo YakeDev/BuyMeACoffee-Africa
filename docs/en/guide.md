@@ -21,7 +21,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<details className=''>
   <summary>Table of Contents</summary>
   <ol>
     <li>

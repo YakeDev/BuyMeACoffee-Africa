@@ -8,10 +8,12 @@ import { Drama } from 'lucide-react'
 import about1 from '/About1.png'
 import about2 from '/image.png'
 import { FaGithub } from 'react-icons/fa'
+import BackToTop from '../components/BackToTop'
 
 const Home = () => {
 	const { t, language } = useI18n()
 	const activeLanguage = language ?? FALLBACK_LANGUAGE
+
 
 	const withLanguagePrefix = useMemo(
 		() => (targetPath) => {
@@ -151,6 +153,7 @@ const Home = () => {
 				</section>
 			</main>
 
+			<BackToTop />
 			<Footer />
 		</>
 	)

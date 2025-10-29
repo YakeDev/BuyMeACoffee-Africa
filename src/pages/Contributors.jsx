@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { FALLBACK_LANGUAGE, useI18n } from '../context/I18nContext'
+import BackToTop from '../components/BackToTop'
 
 const Contributors = () => {
 	const [contributors, setContributors] = useState([])
@@ -209,6 +210,7 @@ const Contributors = () => {
 							</button>
 						</div>
 					</div>
+					<BackToTop />
 				</section>
 			</main>
 
