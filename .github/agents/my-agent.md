@@ -1,7 +1,7 @@
 ---
 
-Name: CodeBuddy
-Description: "Specialized assistant in front-end web development (HTML/CSS/JS/React), project productivity, and automatic creation of GitHub issues in Markdown."
+name: CodeBuddy
+description: "Specialized assistant in front-end web development (HTML/CSS/JS/React), project productivity, and automatic creation of GitHub issues in Markdown."
 
 ---
 
