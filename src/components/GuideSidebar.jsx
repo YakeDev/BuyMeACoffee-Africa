@@ -28,7 +28,7 @@ const GuideSidebar = () => {
   };
 
   return (
-    <nav className="space-y-4">
+    <nav className="space-y-4 border-r border-[#30190c1f] pr-4">
       <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-latte)] mb-3">
         On this page
       </h3>

@@ -10,7 +10,7 @@
   --surface-blur-bg: rgba(245, 237, 230, 0.88);
   --surface-blur-border: rgba(107, 62, 38, 0.14);
   --surface-card-bg: rgba(245, 237, 230, 0.95);
-  --surface-card-border: rgba(107, 62, 38, 0.12);
+  --surface-card-border: #6b3e261f;
   --chip-bg: rgba(200, 159, 133, 0.2);
   --chip-border: rgba(200, 159, 133, 0.45);
   --btn-secondary-bg: rgba(200, 159, 133, 0.18);

@@ -104,7 +104,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									to={withLanguagePrefix('/team')}
+									to={withLanguagePrefix('/contributors')}
 									className='transition hover:text-[var(--text-primary)]'>
 									{t('common.navigation.team')}
 								</Link>

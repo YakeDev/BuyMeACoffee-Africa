@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useI18n } from "../context/I18nContext";
+import BackToTop from "../components/BackToTop";
 
 const Privacy = () => {
   const { t } = useI18n();
@@ -264,6 +265,9 @@ const Privacy = () => {
           </div>
         </div>
       </div>
+
+      <BackToTop />
+
       <Footer />
     </>
   );

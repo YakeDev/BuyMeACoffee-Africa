@@ -1,33 +1,12 @@
-import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar'; // Assuming path is correct
 import Footer from '../components/Footer'; // Assuming path is correct
-import { useI18n } from '../context/I18nContext'; // Assuming path is correct
-import { Link } from 'react-router-dom';
-import { ArrowUpCircle } from 'lucide-react'; // Import the icon
+import { useI18n } from '../context/I18nContext';
 import GuideSidebar from '../components/GuideSidebar'; // Import the new sidebar
-
-// Assuming the logo image is moved to public and path updated in guide.md/en.json
-// Or import it if moved to src/assets:
-// import logoImage from '/Download premium vector of Cup of cappuccino with tree vector about latte art, coffee cup, coffee, coffee logo, and latte art vector 503390 (1) (1).png';
-// Import other images similarly if needed, e.g.:
-// import overviewScreenshot from '/Preview.png'; // Example using an existing image
-// import gettingStartedScreenshot from '/About1.png'; // Example
+import BackToTop from '../components/BackToTop';
 
 const Guide = () => {
   const { t } = useI18n();
 
-  useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-  // Helper for "Back to top" links and button
-  const scrollToTop = (e) => {
-    e.preventDefault();
-    const topElement = document.getElementById('guide-top');
-    if (topElement) {
-      topElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
@@ -288,24 +267,7 @@ const Guide = () => {
 
           </article> {/* End Article */}
 
-          {/* Back to Top button Wrapper - Positioned inside main container */}
-          <div className="fixed bottom-8 inset-x-0 z-50 pointer-events-none">
-            <div className="mx-auto max-w-7xl px-6 flex justify-end pl-6 pr-8 md:pr-12"> {/* Match max-w-7xl */}
-              <button
-                onClick={scrollToTop}
-                className="p-3 rounded-full bg-[var(--color-coffee)] text-[var(--color-cream)] shadow-lg
-                         transition duration-200 ease-in-out 
-                         hover:bg-[color-mix(in_srgb,var(--color-coffee)_88%,black)] 
-                         hover:-translate-y-px 
-                         hover:shadow-[0_22px_48px_rgba(107,62,38,0.28)]
-                         mr-2
-                         pointer-events-auto"
-                aria-label={t('guide.common.backToTop', { defaultValue: 'Back to top' })}
-              >
-                <ArrowUpCircle className="size-6" />
-              </button>
-            </div>
-          </div>
+          <BackToTop />
 
         </div> {/* End Main Container Div */}
       </main>
