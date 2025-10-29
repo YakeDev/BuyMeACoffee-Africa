@@ -13,7 +13,7 @@ const License = () => {
       <div className="min-h-screen bg-white">
         <div className="sm:w-[80%] md:w-[90%] lg:w-[70%] xl:w-[80%] 2xl:w-[55%] mx-auto px-6 py-24">
           {/* Header */}
-          <div className="mb-12">
+          <div className="mb-10 mt-10">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-yellow-500 transition mb-6"
@@ -151,16 +151,6 @@ const License = () => {
                 </p>
               </div>
             </section>
-
-            {/* Footer Note */}
-            <div className="mt-12 pt-8 border-t border-zinc-200 text-center">
-              <p className="text-sm text-zinc-500">
-                © {currentYear} BuyMeACoffee-Africa. All rights reserved.
-              </p>
-              <p className="text-sm text-zinc-600 mt-2 italic">
-                Built with ❤️ for the African developer community
-              </p>
-            </div>
           </div>
         </div>
       </div>
