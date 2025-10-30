@@ -1,16 +1,15 @@
-import { supabase } from "../src/lib/supabaseClient";
-import AppRouter from "./routes/AppRouter";
 import { useEffect } from "react";
+import AppRouter from "./routes/AppRouter";
+import { useAuth } from "./context/AuthContext";
 
 const App = () => {
+  const { token, user, refreshSession } = useAuth();
+
   useEffect(() => {
-    const fetchUsers = async () => {
-      const { data, error } = await supabase.from("users").select("*");
-      if (error) console.error("Erreur Supabase :", error);
-      else console.log("Users :", data);
-    };
-    fetchUsers();
-  }, []);
+    if (token && !user) {
+      void refreshSession();
+    }
+  }, [refreshSession, token, user]);
 
   return <AppRouter />;
 };

@@ -10,7 +10,6 @@ export function errorHandler(err, req, res, next) {
     !isServerError && err.message ? err.message : "An unexpected error occurred.";
 
   if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
     console.error(err);
   }
 

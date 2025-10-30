@@ -9,16 +9,13 @@ async function start() {
     await connectPrisma();
 
     const server = app.listen(port, () => {
-      // eslint-disable-next-line no-console
       console.log(`🚀 API ready on port ${port}`);
     });
 
     const shutdown = async (signal) => {
-      // eslint-disable-next-line no-console
       console.log(`Received ${signal}. Closing server...`);
       server.close(async () => {
         await disconnectPrisma();
-        // eslint-disable-next-line no-console
         console.log("Server closed. Goodbye!");
         process.exit(0);
       });
@@ -31,7 +28,6 @@ async function start() {
       void shutdown("SIGTERM");
     });
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error("Failed to start server:", error);
     process.exit(1);
   }

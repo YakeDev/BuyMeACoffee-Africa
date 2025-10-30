@@ -4,12 +4,14 @@ import { useAuth } from "../context/AuthContext";
 import { FALLBACK_LANGUAGE } from "../context/I18nContext";
 
 const PrivateRoutes = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
   const { language } = useParams();
   const effectiveLanguage = language ?? FALLBACK_LANGUAGE;
 
-  // Si connecté → afficher l'itinéraire demandé
-  // Sinon → rediriger vers /login
+  if (isLoading) {
+    return null;
+  }
+
   return isAuthenticated ? (
     <Outlet />
   ) : (
