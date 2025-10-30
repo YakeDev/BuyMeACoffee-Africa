@@ -165,110 +165,250 @@
   },
   "guide": {
     "common": {
-      "backToTop": "retour en haut"
+      "topic": "Guide de l'utilisateur"
     },
-     "header": {
+    "header": {
       "imageUrl": "/Download premium vector of Cup of cappuccino with tree vector about latte art, coffee cup, coffee, coffee logo, and latte art vector 503390 (1) (1).png",
       "imageAlt": "Logo",
       "title": "BuyMeACoffee-Africa",
       "description_prefix": "Bienvenue sur ",
       "description_bold": "BuyMeACoffee Africa",
-      "description_suffix": ", une plateforme africaine inspirée par Buy Me a Coffee, qui permet aux créateurs, artistes, développeurs et entrepreneurs de recevoir un soutien financier de leur communauté via Mobile Money (Airtel Money, Orange Money, M-Pesa).", 
-      "exploreDocs": "Explorer la doc",  
-      "viewDemo": "Voir la démo",  
-      "reportBug": "Signaler un bug",  
-      "requestFeature": "Demander une fonctionnalité"  
+      "description_suffix": ", une plateforme africaine inspirée par Buy Me a Coffee, qui permet aux créateurs, artistes, développeurs et entrepreneurs de recevoir un soutien financier de leur communauté via Mobile Money (Airtel Money, Orange Money, M-Pesa).",
+      "exploreDocs": "Explorer la doc",
+      "viewDemo": "Voir la démo",
+      "reportBug": "Signaler un bug",
+      "requestFeature": "Demander une fonctionnalité"
     },
     "overview": {
-      "title": "Aperçu",  
+      "title": "Aperçu",
       "imageUrl": "/seo.png",
-      "imageAlt": "Capture d'écran de l'aperçu",  
-      "intro": "BuyMeACoffee Africa offre un moyen simple, rapide et local de soutenir vos créateurs préférés.",  
-      "creatorProfile": "Chaque créateur a sa propre page de profil où les visiteurs peuvent :",  
-      "discover": "Découvrir leur travail",  
-      "donate": "Leur envoyer un don",  
-      "encourage": "Les encourager avec un message",  
-      "platform": "La plateforme est 100% web et optimisée pour une utilisation sur mobile, tablette et PC."  
+      "imageAlt": "Capture d'écran de l'aperçu",
+      "intro": "BuyMeACoffee Africa offre un moyen simple, rapide et local de soutenir vos créateurs préférés.",
+      "creatorProfile": "Chaque créateur a sa propre page de profil où les visiteurs peuvent :",
+      "discover": "Découvrir leur travail",
+      "donate": "Leur envoyer un don",
+      "encourage": "Les encourager avec un message",
+      "platform": "La plateforme est 100% web et optimisée pour une utilisation sur mobile, tablette et PC."
     },
     "gettingStarted": {
-      "title": "Démarrage rapide",  
-      "intro": "Pour commencer à soutenir votre créateur préféré, vous devez d'abord :",  
+      "title": "Démarrage rapide",
+      "intro": "Pour commencer à soutenir votre créateur préféré, vous devez d'abord :",
       "createAccount": {
-        "title": "Créer un compte",  
-        "step1": "Aller sur la page d'accueil",  
-        "step2": "Cliquer sur \"Commencer gratuitement\".",  
-        "step3": "Choisir votre méthode d'inscription via :",  
-        "methodGoogle": "Compte Google (connexion rapide)",  
-        "methodEmail": "adresse e-mail"  
+        "title": "Créer un compte",
+        "step1": "Aller sur la page d'accueil",
+        "step2": "Cliquer sur \"Commencer gratuitement\".",
+        "step3": "Choisir votre méthode d'inscription via :",
+        "methodGoogle": "Compte Google (connexion rapide)",
+        "methodEmail": "adresse e-mail"
       },
-      "imageAlt": "Écran de connexion/inscription",  
-      "completeProfile": "Une fois connecté, complétez votre profil avec :",  
-      "profilePic": "Une photo de profil",  
-      "profileBio": "Une courte biographie",  
-      "profileSocial": "Vos liens vers les réseaux sociaux",  
-      "profileMobileMoney": "Votre numéro Mobile Money (pour recevoir les soutiens)"  
+      "imageAlt": "Écran de connexion/inscription",
+      "completeProfile": "Une fois connecté, complétez votre profil avec :",
+      "profilePic": "Une photo de profil",
+      "profileBio": "Une courte biographie",
+      "profileSocial": "Vos liens vers les réseaux sociaux",
+      "profileMobileMoney": "Votre numéro Mobile Money (pour recevoir les soutiens)"
     },
     "discover": {
-        "title": "Découvrir les créateurs",  
-        "intro": "Depuis la page d'accueil ou le tableau de bord, vous pouvez :",  
-        "explore": "Explorer les créateurs les plus populaires",  
-        "search": "Rechercher un créateur par nom ou catégorie",  
-        "accessProfile": "Accéder à leur profil pour en savoir plus sur eux"  
+      "title": "Découvrir les créateurs",
+      "intro": "Depuis la page d'accueil ou le tableau de bord, vous pouvez :",
+      "explore": "Explorer les créateurs les plus populaires",
+      "search": "Rechercher un créateur par nom ou catégorie",
+      "accessProfile": "Accéder à leur profil pour en savoir plus sur eux"
     },
     "support": {
-        "title": "Soutenir un créateur",  
-        "step1": "Aller sur le profil du créateur.",  
-        "step2": "Cliquer sur “Offrir un café”.",  
-        "step3": "Sélectionner le montant à envoyer (ex: 1, 3, ou 5 cafés).",  
-        "step4": "Choisir votre méthode de paiement Mobile Money :",  
-        "methodAirtel": "Airtel Money",
-        "methodOrange": "Orange Money",
-        "methodMpesa": "M-Pesa",
-        "step5": "Confirmer la transaction.",  
-        "confirmation": "Une fois le paiement validé, le créateur reçoit une notification instantanée."  
+      "title": "Soutenir un créateur",
+      "step1": "Aller sur le profil du créateur.",
+      "step2": "Cliquer sur “Offrir un café”.",
+      "step3": "Sélectionner le montant à envoyer (ex: 1, 3, ou 5 cafés).",
+      "step4": "Choisir votre méthode de paiement Mobile Money :",
+      "methodAirtel": "Airtel Money",
+      "methodOrange": "Orange Money",
+      "methodMpesa": "M-Pesa",
+      "step5": "Confirmer la transaction.",
+      "confirmation": "Une fois le paiement validé, le créateur reçoit une notification instantanée."
     },
     "dashboard": {
-        "title": "Tableau de bord (pour les créateurs)",  
-        "intro": "Le tableau de bord permet à chaque créateur de :",  
-        "viewBackers": "Voir le montant total des soutiens reçus",  
-        "viewMessages": "Voir les messages de leurs soutiens",  
-        "manageProfile": "Gérer leur profil et leurs informations de paiement",  
-        "downloadReport": "Télécharger un rapport des gains"  
+      "title": "Tableau de bord (pour les créateurs)",
+      "intro": "Le tableau de bord permet à chaque créateur de :",
+      "viewBackers": "Voir le montant total des soutiens reçus",
+      "viewMessages": "Voir les messages de leurs soutiens",
+      "manageProfile": "Gérer leur profil et leurs informations de paiement",
+      "downloadReport": "Télécharger un rapport des gains"
     },
     "security": {
-        "title": "Sécurité & Confidentialité",  
-        "payments": "Les paiements sont traités de manière sécurisée via les API Mobile Money.",  
-        "storage": "Aucune information bancaire n'est stockée sur nos serveurs.",  
-        "disablePage": "Les créateurs peuvent désactiver temporairement leur page publique s'ils le souhaitent."  
+      "title": "Sécurité & Confidentialité",
+      "payments": "Les paiements sont traités de manière sécurisée via les API Mobile Money.",
+      "storage": "Aucune information bancaire n'est stockée sur nos serveurs.",
+      "disablePage": "Les créateurs peuvent désactiver temporairement leur page publique s'ils le souhaitent."
     },
     "faq": {
-      "title": "FAQ — Foire Aux Questions",  
-      "q1": "Q : Puis-je utiliser plusieurs comptes Mobile Money ?",  
-      "a1": "Pas encore. Un seul compte est associé à chaque profil.",  
-      "q2": "Q : Puis-je retirer mes fonds directement ?",  
-      "a2": "Oui, les retraits sont effectués automatiquement vers votre compte Mobile Money configuré.",  
-      "q3": "Q : L'application fonctionne-t-elle sur les smartphones ?",  
-      "a3": "Oui ! L'application est entièrement responsive et optimisée pour tous les écrans."  
+      "title": "FAQ — Foire Aux Questions",
+      "q1": "Q : Puis-je utiliser plusieurs comptes Mobile Money ?",
+      "a1": "Pas encore. Un seul compte est associé à chaque profil.",
+      "q2": "Q : Puis-je retirer mes fonds directement ?",
+      "a2": "Oui, les retraits sont effectués automatiquement vers votre compte Mobile Money configuré.",
+      "q3": "Q : L'application fonctionne-t-elle sur les smartphones ?",
+      "a3": "Oui ! L'application est entièrement responsive et optimisée pour tous les écrans."
     },
-     "contact": {
-        "title": "Contact & Support",  
-        "intro": "Si vous rencontrez un problème ou souhaitez suggérer une amélioration :",  
-        "email": "Email :",  
-        "discord": "Communauté Discord :",  
-        "discordLinkText": "Rejoindre le serveur"  
+    "contact": {
+      "title": "Contact & Support",
+      "intro": "Si vous rencontrez un problème ou souhaitez suggérer une amélioration :",
+      "email": "Email :",
+      "discord": "Communauté Discord :",
+      "discordLinkText": "Rejoindre le serveur"
     },
     "comingSoon": {
-        "title": "Bientôt disponible",  
-        "creditCard": "Intégration des paiements par carte de crédit",  
-        "subscription": "Fonctionnalité \"Abonnement mensuel\"",  
-        "discover": "Section \"Découvrir\" pour mettre en avant les nouveaux créateurs",  
-        "appName": "BuyMeACoffee Africa",
-        "tagline": "Parce que soutenir un créateur devrait être aussi simple que de lui offrir un café."  
+      "title": "Bientôt disponible",
+      "creditCard": "Intégration des paiements par carte de crédit",
+      "subscription": "Fonctionnalité \"Abonnement mensuel\"",
+      "discover": "Section \"Découvrir\" pour mettre en avant les nouveaux créateurs",
+      "appName": "BuyMeACoffee Africa",
+      "tagline": "Parce que soutenir un créateur devrait être aussi simple que de lui offrir un café."
     },
     "license": {
-      "title": "Licence",  
-      "text": "Distribué sous la licence MIT. Voir",  
-      "moreInfo": "pour plus d'informations."  
+      "title": "Licence",
+      "text": "Distribué sous la licence MIT. Voir",
+      "moreInfo": "pour plus d'informations."
+    }
+  },
+  "privacy": {
+    "sidebar": {
+      "onThisPage": "Sur cette page",
+      "introduction": "Introduction",
+      "infoCollected": "Informations collectées",
+      "infoUse": "Utilisation des informations",
+      "infoShare": "Partage des informations",
+      "dataSecurity": "Sécurité et stockage",
+      "rightsChoices": "Vos droits et choix",
+      "childrensPrivacy": "Vie privée des enfants",
+      "contactUs": "Nous contacter"
+    },
+    "header": {
+      "title": "Politique de confidentialité",
+      "effectiveDate": "Date d'entrée en vigueur : 1er janvier 2025",
+      "lastUpdated": "Dernière mise à jour : 1er janvier 2025"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "p1": "Bienvenue sur BuyMeACoffee-Africa (\"nous\", \"notre\"). Nous nous engageons à protéger votre vie privée et à assurer la sécurité de vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos données lorsque vous utilisez notre plateforme.",
+      "p2": "En utilisant BuyMeACoffee-Africa, vous acceptez la collecte et l'utilisation d'informations conformément à cette politique."
+    },
+    "infoCollected": {
+      "title": "Informations que nous collectons",
+      "personal": {
+        "title": "Informations personnelles",
+        "item1": "<strong>Informations de compte :</strong> Nom, adresse e-mail, nom d'utilisateur et mot de passe",
+        "item2": "<strong>Informations de profil :</strong> Photo de profil, biographie, description du créateur et liens vers vos réseaux sociaux ou site web",
+        "item3": "<strong>Informations de paiement :</strong> Numéro Mobile Money, détails des transactions et historique des paiements",
+        "item4": "<strong>Données de communication :</strong> Messages, demandes de support et commentaires que vous nous envoyez"
+      },
+      "automated": {
+        "title": "Informations collectées automatiquement",
+        "intro": "Nous collectons automatiquement certaines informations lorsque vous utilisez notre plateforme :",
+        "item1": "<strong>Données d'utilisation :</strong> Pages visitées, temps passé sur les pages, clics et schémas de navigation",
+        "item2": "<strong>Informations sur l'appareil :</strong> Adresse IP, type de navigateur, système d'exploitation, identifiants de l'appareil",
+        "item3": "<strong>Cookies et technologies de suivi :</strong> Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience"
+      },
+      "thirdParty": {
+        "title": "Informations de tiers",
+        "intro": "Si vous vous connectez à l'aide de services tiers (par exemple, GitHub, Google), nous pouvons recevoir :",
+        "item1": "Les informations de base de votre profil (nom, e-mail, photo de profil)",
+        "item2": "Les informations publiques de vos dépôts (pour l'authentification GitHub)",
+        "item3": "Toute autre information que vous autorisez le service tiers à partager"
+      }
+    },
+    "infoUse": {
+      "title": "Comment nous utilisons vos informations",
+      "intro": "Nous utilisons vos informations personnelles aux fins suivantes :",
+      "serviceDelivery": {
+        "title": "Fourniture de services",
+        "item1": "Création et gestion de votre compte",
+        "item2": "Traitement des dons et des paiements",
+        "item3": "Permettre la communication entre les créateurs et les sympathisants",
+        "item4": "Fournir un support client"
+      },
+      "improvement": {
+        "title": "Amélioration de la plateforme",
+        "item1": "Analyser les modèles d'utilisation pour améliorer nos services",
+        "item2": "Développer de nouvelles fonctionnalités",
+        "item3": "Mener des recherches et des analyses"
+      },
+      "communication": {
+        "title": "Communication",
+        "item1": "Envoi d'e-mails transactionnels (confirmations de dons, mises à jour de compte)",
+        "item2": "Fournir des annonces de service importantes",
+        "item3": "Répondre à vos demandes de renseignements et de support",
+        "item4": "Envoi de communications marketing (avec votre consentement)"
+      },
+      "security": {
+        "title": "Sécurité et conformité",
+        "item1": "Détecter et prévenir la fraude, les abus et les incidents de sécurité",
+        "item2": "Faire respecter nos conditions d'utilisation",
+        "item3": "Se conformer aux obligations légales et réglementaires"
+      }
+    },
+    "infoShare": {
+      "title": "Comment nous partageons vos informations",
+      "intro": "<strong>Nous ne vendons pas vos informations personnelles.</strong> Nous pouvons partager vos données uniquement dans les circonstances suivantes :",
+      "importantNote": "<strong>Important :</strong> Votre vie privée est notre priorité. Nous ne partageons les informations que lorsque cela est nécessaire pour fournir des services ou nous conformer aux exigences légales.",
+      "item1": "<strong>Avec votre consentement :</strong> Lorsque vous nous autorisez explicitement à le faire",
+      "item2": "<strong>Fournisseurs de services :</strong> Processeurs de paiement, hébergement cloud, services d'authentification et fournisseurs d'analyses",
+      "item3": "<strong>Informations publiques :</strong> Profils de créateurs et noms d'utilisateur que vous choisissez de rendre publics",
+      "item4": "<strong>Exigences légales :</strong> Lorsque la loi l'exige ou pour protéger nos droits",
+      "item5": "<strong>Transferts d'entreprise :</strong> En cas de fusion, d'acquisition ou de vente d'actifs"
+    },
+    "dataSecurity": {
+      "title": "Stockage et sécurité des données",
+      "securityMeasures": {
+        "title": "Mesures de sécurité",
+        "intro": "Nous mettons en œuvre des mesures de sécurité standard pour protéger vos données :",
+        "item1": "Chiffrement des données en transit (HTTPS/TLS)",
+        "item2": "Chiffrement des données sensibles au repos",
+        "item3": "Hachage des mots de passe avec bcrypt",
+        "item4": "Audits de sécurité et mises à jour réguliers",
+        "item5": "Contrôles d'accès et mécanismes d'authentification",
+        "item6": "Authentification sécurisée basée sur les jetons (JWT)"
+      },
+      "retention": {
+        "title": "Conservation des données",
+        "p1": "Nous conservons vos informations personnelles aussi longtemps que votre compte est actif ou que nécessaire pour fournir des services. Si vous supprimez votre compte, nous supprimerons ou anonymiserons vos données dans les 90 jours, sauf si nous devons les conserver à des fins légales ou réglementaires."
+      }
+    },
+    "rightsChoices": {
+      "title": "Vos droits et choix",
+      "intro": "Selon votre emplacement, vous pouvez avoir les droits suivants concernant vos données personnelles :",
+      "access": {
+        "title": "Accès & Portabilité",
+        "item1": "• Demander une copie de vos données",
+        "item2": "• Recevoir les données dans un format portable"
+      },
+      "correction": {
+        "title": "Correction & Suppression",
+        "item1": "• Mettre à jour les informations inexactes",
+        "item2": "• Demander la suppression de vos données"
+      },
+      "consent": {
+        "title": "Gestion du consentement",
+        "item1": "• Retirer votre consentement à tout moment",
+        "item2": "• Vous désinscrire des e-mails marketing"
+      },
+      "restriction": {
+        "title": "Restriction & Opposition",
+        "item1": "• Demander un traitement limité",
+        "item2": "• Vous opposer à certaines utilisations"
+      },
+      "p1": "Pour exercer l'un de ces droits, veuillez nous contacter à <a href=\"mailto:privacy@buymeacoffee-africa.com\" className=\"font-medium text-[var(--color-coffee)] hover:text-[var(--color-espresso)]\">privacy@buymeacoffee-africa.com</a>"
+    },
+    "childrensPrivacy": {
+      "title": "Vie privée des enfants",
+      "p1": "BuyMeACoffee-Africa n'est pas destiné aux enfants de moins de 13 ans (ou de moins de 16 ans dans l'Union européenne). Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si nous découvrons que nous avons collecté des données auprès d'un enfant, nous les supprimerons immédiatement. Si vous pensez que nous avons collecté des informations auprès d'un enfant, veuillez nous contacter."
+    },
+    "contactUs": {
+      "title": "Nous contacter",
+      "intro": "Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité ou nos pratiques en matière de données, veuillez nous contacter :",
+      "email": "<strong>Email :</strong> <a href=\"mailto:privacy@buymeacoffee-africa.com\" className=\"text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline\">privacy@buymeacoffee-africa.com</a>",
+      "support": "<strong>Support :</strong> <a href=\"mailto:support@buymeacoffee-africa.com\" className=\"text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline\">support@buymeacoffee-africa.com</a>",
+      "github": "<strong>GitHub :</strong> <a href=\"https://github.com/2MJ-DEV/BuyMeACoffee-Africa\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline\">github.com/2MJ-DEV/BuyMeACoffee-Africa</a>"
     }
   }
 }
