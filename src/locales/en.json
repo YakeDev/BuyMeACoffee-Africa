@@ -105,6 +105,17 @@
     "github": "Continue with GitHub",
     "google": "Continue with Google",
     "divider": "or connect with",
+    "form": {
+      "divider": "or sign in with email",
+      "email": "Email address",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing you in...",
+      "errors": {
+        "missingFields": "Enter both email and password.",
+        "generic": "Unable to sign in. Please try again."
+      }
+    },
     "cta": {
       "question": "Don’t have an account?",
       "action": "Sign up"
@@ -116,6 +127,19 @@
     "github": "Continue with GitHub",
     "google": "Continue with Google",
     "divider": "or connect with",
+    "form": {
+      "divider": "or create an account with email",
+      "name": "Full name",
+      "namePlaceholder": "Jane Doe",
+      "email": "Email address",
+      "password": "Password",
+      "submit": "Create account",
+      "submitting": "Creating your account...",
+      "errors": {
+        "missingFields": "Name, email, and password are required.",
+        "generic": "Unable to complete registration. Please try again."
+      }
+    },
     "cta": {
       "question": "Already have an account?",
       "action": "Log in"
@@ -152,7 +176,10 @@
     "notSet": "Not set"
   },
   "auth": {
-    "githubCallback": "Processing GitHub login..."
+    "githubCallback": "Processing GitHub login...",
+    "errors": {
+      "providerNotConfigured": "{provider} sign-in is not configured on this device."
+    }
   },
   "dates": {
     "yearlyCopyright": "© {year} BuyMeACoffee-Africa. All rights reserved."

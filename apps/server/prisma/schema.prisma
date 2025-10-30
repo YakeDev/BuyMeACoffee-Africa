@@ -1,6 +1,5 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -10,9 +9,12 @@ datasource db {
 
 model User {
   id        Int       @id @default(autoincrement())
-  name      String
-  email     String    @unique
-  password  String
+  name      String?
+  email     String?   @unique
+  password  String?
+  githubId        String?   @unique
+  githubUsername  String?
+  githubAvatarUrl String?
   role      String    @default("user")
   donations Donation[]
   createdAt DateTime  @default(now())

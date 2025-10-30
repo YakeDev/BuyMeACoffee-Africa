@@ -1,25 +1,34 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "buymeacoffee-africa-server",
+  "version": "0.1.0",
+  "description": "Express API for BuyMeACoffee Africa",
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "prisma": "prisma",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
-    "@prisma/client": "*",
-    "bcrypt": "*",
-    "cors": "*",
-    "dotenv": "*",
-    "express": "*",
-    "jsonwebtoken": "*"
+    "@prisma/client": "^6.18.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "prisma": "^6.18.0"
   },
   "devDependencies": {
-    "nodemon": "*",
-    "prisma": "*"
+    "eslint": "^9.36.0",
+    "nodemon": "^3.1.10"
   }
 }
