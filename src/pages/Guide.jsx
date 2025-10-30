@@ -31,12 +31,19 @@ const Guide = () => {
               <img
                 src={t('guide.header.imageUrl', {defaultValue: '/Download premium vector of Cup of cappuccino with tree vector about latte art, coffee cup, coffee, coffee logo, and latte art vector 503390 (1) (1).png'})}
                 alt={t('guide.header.imageAlt', {defaultValue: 'Logo'})}
-                className="w-40 h-40 mx-auto mb-4" // Adjusted size
+                className="w-40 h-40 mx-auto mb-1" // Adjusted size
               />
               {/* Note: ID added here for potential linking, though usually linked via sections below */}
-              <h1 id="buymeacoffee-africa-title" className="text-4xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-24">
+              <h1 id="buymeacoffee-africa-title" className="text-xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-24">
                  {t('guide.header.title', {defaultValue: 'BuyMeACoffee-Africa'})}
               </h1>
+              <div className="mb-10">
+              <div className="mx-auto h-px w-full max-w-lg mb-6 "></div>
+              <h1 className="text-4xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-28 border-b border-[var(--surface-card-border)] pb-3 mt-4"> {/* Added scroll-mt */}
+                User Guide
+              </h1>
+              </div>
+              <div className="mx-auto h-px w-full max-w-lg mb-6 "></div>
               <p className="mb-4 text-lg leading-relaxed max-w-3xl mx-auto text-justify">
                 {t('guide.header.description_prefix', { defaultValue: "Welcome to " })}
                 <strong>{t('guide.header.description_bold', { defaultValue: 'BuyMeACoffee Africa' })}</strong>
@@ -225,10 +232,17 @@ const Guide = () => {
                     {t('guide.contact.title', { defaultValue: 'Contact & Support' })}
                 </h2>
                 <p className="leading-relaxed mb-4">{t('guide.contact.intro', { defaultValue: 'If you encounter a problem or would like to suggest an improvement:' })}</p>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>{t('guide.contact.email', { defaultValue: 'Email:' })} <a href="mailto:support@buymeacoffee.africa" className="text-[var(--color-coffee)] hover:underline">support@buymeacoffee.africa</a></li>
-                    <li>{t('guide.contact.discord', { defaultValue: 'Discord Community:' })} <a href="#" className="text-[var(--color-coffee)] hover:underline">{t('guide.contact.discordLinkText', { defaultValue: 'Join the server' })}</a></li> {/* Kept placeholder link */}
-                </ul>
+                <div className="bg-[var(--surface-card-bg)] border border-[var(--surface-card-border)] rounded-lg p-6 space-y-2">
+                    <p className="text-[var(--text-secondary)]">
+                      <strong>Email:</strong> <a href="mailto:privacy@buymeacoffee-africa.com" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">privacy@buymeacoffee-africa.com</a>
+                    </p>
+                    <p className="text-[var(--text-secondary)]">
+                      <strong>Support:</strong> <a href="mailto:support@buymeacoffee-africa.com" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">support@buymeacoffee-africa.com</a>
+                    </p>
+                    <p className="text-[var(--text-secondary)]">
+                      <strong>GitHub:</strong> <a href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa" target="_blank" rel="noopener noreferrer" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">github.com/2MJ-DEV/BuyMeACoffee-Africa</a>
+                    </p>
+                  </div>
                 {/* Removed BackToTopLink */}
             </section>
 
