@@ -4,14 +4,14 @@ import { useI18n } from '../context/I18nContext'; // Adjust path if needed
 
 // Define the sections for the Privacy Policy
 const sections = [
-  { id: 'introduction', title: 'Introduction' },
-  { id: 'info-collected', title: 'Information We Collect' },
-  { id: 'info-use', title: 'How We Use Your Information' },
-  { id: 'info-share', title: 'How We Share Your Information' },
-  { id: 'data-security', title: 'Data Storage and Security' },
-  { id: 'rights-choices', title: 'Your Rights and Choices' },
-  { id: 'childrens-privacy', title: 'Children\'s Privacy' },
-  { id: 'contact-us', title: 'Contact Us' },
+  { id: 'introduction', titleKey: 'privacy.sidebar.introduction', default: 'Introduction' },
+  { id: 'info-collected', titleKey: 'privacy.sidebar.infoCollected', default: 'Information We Collect' },
+  { id: 'info-use', titleKey: 'privacy.sidebar.infoUse', default: 'How We Use Your Information' },
+  { id: 'info-share', titleKey: 'privacy.sidebar.infoShare', default: 'How We Share Your Information' },
+  { id: 'data-security', titleKey: 'privacy.sidebar.dataSecurity', default: 'Data Storage and Security' },
+  { id: 'rights-choices', titleKey: 'privacy.sidebar.rightsChoices', default: 'Your Rights and Choices' },
+  { id: 'childrens-privacy', titleKey: 'privacy.sidebar.childrensPrivacy', default: "Children's Privacy" },
+  { id: 'contact-us', titleKey: 'privacy.sidebar.contactUs', default: 'Contact Us' },
 ];
 
 const PrivacySidebar = () => {
@@ -37,8 +37,7 @@ const PrivacySidebar = () => {
   return (
     <nav className="space-y-4 border-r border-[var(--surface-card-border)] pr-4"> {/* Use theme border */}
       <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-latte)] mb-3">
-        {/* You might want to add a translation key for this */}
-        On this page
+        {t('privacy.sidebar.onThisPage', { defaultValue: 'On this page' })}
       </h3>
       <ul className="space-y-2 border-l border-[var(--surface-card-border)] pl-4 text-sm"> {/* Use theme border */}
         {sections.map((section) => (
@@ -48,8 +47,7 @@ const PrivacySidebar = () => {
               onClick={(e) => handleLinkClick(e, section.id)}
               className="block text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:font-medium transition-colors duration-150"
             >
-              {/* Titles are hardcoded for now, add translation keys if desired */}
-              {section.title}
+              {t(section.titleKey, { defaultValue: section.default })}
             </a>
           </li>
         ))}

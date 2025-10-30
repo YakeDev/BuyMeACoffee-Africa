@@ -37,13 +37,12 @@ const Guide = () => {
               <h1 id="buymeacoffee-africa-title" className="text-xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-24">
                  {t('guide.header.title', {defaultValue: 'BuyMeACoffee-Africa'})}
               </h1>
-              <div className="mb-10">
+              <div className="mb-6">
               <div className="mx-auto h-px w-full max-w-lg mb-6 "></div>
               <h1 className="text-4xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-28 border-b border-[var(--surface-card-border)] pb-3 mt-4"> {/* Added scroll-mt */}
-                User Guide
+                {t('guide.common.topic', { defaultValue: "User Guide" })}
               </h1>
               </div>
-              <div className="mx-auto h-px w-full max-w-lg mb-6 "></div>
               <p className="mb-4 text-lg leading-relaxed max-w-3xl mx-auto text-justify">
                 {t('guide.header.description_prefix', { defaultValue: "Welcome to " })}
                 <strong>{t('guide.header.description_bold', { defaultValue: 'BuyMeACoffee Africa' })}</strong>

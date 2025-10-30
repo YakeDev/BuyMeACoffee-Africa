@@ -38,11 +38,11 @@ const Privacy = () => {
             <div className="mb-10">
               <div className="mx-auto h-px w-full max-w-lg mb-6 "></div>
               <h1 className="text-4xl font-heading font-bold text-[var(--text-primary)] mb-4 scroll-mt-28 border-b border-[var(--surface-card-border)] pb-3 mt-4"> {/* Added scroll-mt */}
-                Privacy Policy
+                {t('privacy.header.title', { defaultValue: 'Privacy Policy' })}
               </h1>
               <div className="text-sm text-[var(--text-muted)] space-y-1">
-                <p>Effective Date: January 1, 2025</p>
-                <p>Last Updated: January 1, 2025</p>
+                <p>{t('privacy.header.effectiveDate', { defaultValue: 'Effective Date: January 1, 2025' })}</p>
+                <p>{t('privacy.header.lastUpdated', { defaultValue: 'Last Updated: January 1, 2025' })}</p>
               </div>
             </div>
             </section>
@@ -51,107 +51,107 @@ const Privacy = () => {
               {/* Introduction */}
               <section id="introduction"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Introduction
+                  {t('privacy.introduction.title', { defaultValue: 'Introduction' })}
                 </h2>
                 <p className="leading-relaxed">
-                  Welcome to BuyMeACoffee-Africa ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use our platform.
+                  {t('privacy.introduction.p1', { defaultValue: 'Welcome to BuyMeACoffee-Africa...' })}
                 </p>
                 <p className="leading-relaxed mt-4">
-                  By using BuyMeACoffee-Africa, you agree to the collection and use of information in accordance with this policy.
+                  {t('privacy.introduction.p2', { defaultValue: 'By using BuyMeACoffee-Africa, you agree...' })}
                 </p>
               </section>
 
               {/* Section 1 */}
               <section id="info-collected"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Information We Collect
+                  {t('privacy.infoCollected.title', { defaultValue: 'Information We Collect' })}
                 </h2>
 
                 <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 mt-6 scroll-mt-24"> {/* Added scroll-mt */}
-                  Personal Information
+                  {t('privacy.infoCollected.personal.title', { defaultValue: 'Personal Information' })}
                 </h3>
                 {/* ... rest of section 1 content ... */}
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Account Information:</strong> Name, email address, username, and password</li>
-                  <li><strong>Profile Information:</strong> Profile picture, bio, creator description, and links to your social media or website</li>
-                  <li><strong>Payment Information:</strong> Mobile Money number, transaction details, and payment history</li>
-                  <li><strong>Communication Data:</strong> Messages, support inquiries, and feedback you send to us</li>
+                  <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.personal.item1', { defaultValue: '<strong>Account Information:</strong> Name, email address, username, and password' }) }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.personal.item2', { defaultValue: '<strong>Profile Information:</strong> Profile picture, bio, creator description, and links to your social media or website' }) }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.personal.item3', { defaultValue: '<strong>Payment Information:</strong> Mobile Money number, transaction details, and payment history' }) }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.personal.item4', { defaultValue: '<strong>Communication Data:</strong> Messages, support inquiries, and feedback you send to us' }) }} />
                 </ul>
 
 
                 <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 mt-6 scroll-mt-24"> {/* Added scroll-mt */}
-                  Automatically Collected Information
+                  {t('privacy.infoCollected.automated.title', { defaultValue: 'Automatically Collected Information' })}
                 </h3>
                  {/* ... rest of section 1.2 content ... */}
                  <p className="leading-relaxed mb-3">
-                   We automatically collect certain information when you use our platform:
+                   {t('privacy.infoCollected.automated.intro', { defaultValue: 'We automatically collect certain information...' })}
                  </p>
                  <ul className="list-disc pl-6 space-y-2">
-                   <li><strong>Usage Data:</strong> Pages visited, time spent on pages, clicks, and navigation patterns</li>
-                   <li><strong>Device Information:</strong> IP address, browser type, operating system, device identifiers</li>
-                   <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance your experience</li>
+                   <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.automated.item1', { defaultValue: '<strong>Usage Data:</strong> Pages visited, time spent on pages, clicks, and navigation patterns' }) }} />
+                   <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.automated.item2', { defaultValue: '<strong>Device Information:</strong> IP address, browser type, operating system, device identifiers' }) }} />
+                   <li dangerouslySetInnerHTML={{ __html: t('privacy.infoCollected.automated.item3', { defaultValue: '<strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance your experience' }) }} />
                  </ul>
 
                  <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 mt-6 scroll-mt-24"> {/* Added scroll-mt */}
-                   Third-Party Information
+                   {t('privacy.infoCollected.thirdParty.title', { defaultValue: 'Third-Party Information' })}
                  </h3>
                  {/* ... rest of section 1.3 content ... */}
                   <p className="leading-relaxed mb-3">
-                    If you sign in using third-party services (e.g., GitHub, Google), we may receive:
+                    {t('privacy.infoCollected.thirdParty.intro', { defaultValue: 'If you sign in using third-party services...' })}
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Basic profile information (name, email, profile picture)</li>
-                    <li>Public repository information (for GitHub authentication)</li>
-                    <li>Any other information you authorize the third-party service to share</li>
+                    <li>{t('privacy.infoCollected.thirdParty.item1', { defaultValue: 'Basic profile information (name, email, profile picture)' })}</li>
+                    <li>{t('privacy.infoCollected.thirdParty.item2', { defaultValue: 'Public repository information (for GitHub authentication)' })}</li>
+                    <li>{t('privacy.infoCollected.thirdParty.item3', { defaultValue: 'Any other information you authorize...' })}</li>
                   </ul>
               </section>
 
               {/* Section 2 */}
               <section id="info-use"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  How We Use Your Information
+                  {t('privacy.infoUse.title', { defaultValue: 'How We Use Your Information' })}
                 </h2>
                 {/* ... rest of section 2 content ... */}
                   <p className="leading-relaxed mb-4">
-                    We use your personal information for the following purposes:
+                    {t('privacy.infoUse.intro', { defaultValue: 'We use your personal information...' })}
                   </p>
                    {/* ... rest of section 2 sub-sections ... */}
                    <div className="space-y-4">
                      {/* ... (Service Delivery, Platform Improvement, etc.) ... */}
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">Service Delivery</h3> {/* Add scroll-mt */}
+                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.serviceDelivery.title', { defaultValue: 'Service Delivery' })}</h3> {/* Add scroll-mt */}
                         {/* ... ul ... */}
                          <ul className="list-disc pl-6 space-y-1">
-                           <li>Creating and managing your account</li>
-                           <li>Processing donations and payments</li>
-                           <li>Enabling communication between creators and supporters</li>
-                           <li>Providing customer support</li>
+                           <li>{t('privacy.infoUse.serviceDelivery.item1', { defaultValue: 'Creating and managing your account' })}</li>
+                           <li>{t('privacy.infoUse.serviceDelivery.item2', { defaultValue: 'Processing donations and payments' })}</li>
+                           <li>{t('privacy.infoUse.serviceDelivery.item3', { defaultValue: 'Enabling communication between creators and supporters' })}</li>
+                           <li>{t('privacy.infoUse.serviceDelivery.item4', { defaultValue: 'Providing customer support' })}</li>
                          </ul>
                       </div>
                       {/* Add scroll-mt-24 to other h3 elements in this section too */}
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">Platform Improvement</h3>
+                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.improvement.title', { defaultValue: 'Platform Improvement' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
-                           <li>Analyzing usage patterns to improve our services</li>
-                           <li>Developing new features and functionality</li>
-                           <li>Conducting research and analytics</li>
+                           <li>{t('privacy.infoUse.improvement.item1', { defaultValue: 'Analyzing usage patterns...' })}</li>
+                           <li>{t('privacy.infoUse.improvement.item2', { defaultValue: 'Developing new features...' })}</li>
+                           <li>{t('privacy.infoUse.improvement.item3', { defaultValue: 'Conducting research and analytics' })}</li>
                          </ul>
                       </div>
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">Communication</h3>
+                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.communication.title', { defaultValue: 'Communication' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
-                           <li>Sending transactional emails (donation confirmations, account updates)</li>
-                           <li>Providing important service announcements</li>
-                           <li>Responding to your inquiries and support requests</li>
-                           <li>Sending marketing communications (with your consent)</li>
+                           <li>{t('privacy.infoUse.communication.item1', { defaultValue: 'Sending transactional emails...' })}</li>
+                           <li>{t('privacy.infoUse.communication.item2', { defaultValue: 'Providing important service announcements' })}</li>
+                           <li>{t('privacy.infoUse.communication.item3', { defaultValue: 'Responding to your inquiries...' })}</li>
+                           <li>{t('privacy.infoUse.communication.item4', { defaultValue: 'Sending marketing communications (with your consent)' })}</li>
                          </ul>
                       </div>
                        <div>
-                         <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">Security and Compliance</h3>
+                         <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.security.title', { defaultValue: 'Security and Compliance' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
-                           <li>Detecting and preventing fraud, abuse, and security incidents</li>
-                           <li>Enforcing our Terms of Service</li>
-                           <li>Complying with legal obligations and regulations</li>
+                           <li>{t('privacy.infoUse.security.item1', { defaultValue: 'Detecting and preventing fraud...' })}</li>
+                           <li>{t('privacy.infoUse.security.item2', { defaultValue: 'Enforcing our Terms of Service' })}</li>
+                           <li>{t('privacy.infoUse.security.item3', { defaultValue: 'Complying with legal obligations...' })}</li>
                          </ul>
                        </div>
                    </div>
@@ -160,131 +160,119 @@ const Privacy = () => {
               {/* Section 3 */}
               <section id="info-share"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  How We Share Your Information
+                  {t('privacy.infoShare.title', { defaultValue: 'How We Share Your Information' })}
                 </h2>
                 {/* ... rest of section 3 content ... */}
-                  <p className="leading-relaxed mb-4">
-                    <strong>We do not sell your personal information.</strong> We may share your data only in the following circumstances:
-                  </p>
+                  <p className="leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.intro', { defaultValue: '<strong>We do not sell your personal information.</strong>...' }) }} />
                   {/* ... rest of section 3 ul ... */}
                    <div className="bg-[rgba(225,169,72,0.1)] border border-[rgba(225,169,72,0.3)] rounded-lg p-4 mb-4">
-                      <p className="text-sm text-[var(--color-coffee)]">
-                       <strong>Important:</strong> Your privacy is our priority. We only share information when necessary to provide services or comply with legal requirements.
-                     </p>
+                      <p className="text-sm text-[var(--color-coffee)]" dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.importantNote', { defaultValue: '<strong>Important:</strong> Your privacy is our priority...' }) }} />
                    </div>
                    <ul className="list-disc pl-6 space-y-3">
-                     <li><strong>With Your Consent:</strong> When you explicitly authorize us to do so</li>
-                     <li><strong>Service Providers:</strong> Payment processors, cloud hosting, authentication services, and analytics providers</li>
-                     <li><strong>Public Information:</strong> Creator profiles and usernames you choose to make public</li>
-                     <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
-                     <li><strong>Business Transfers:</strong> In case of merger, acquisition, or sale of assets</li>
+                     <li dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.item1', { defaultValue: '<strong>With Your Consent:</strong>...' }) }} />
+                     <li dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.item2', { defaultValue: '<strong>Service Providers:</strong>...' }) }} />
+                     <li dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.item3', { defaultValue: '<strong>Public Information:</strong>...' }) }} />
+                     <li dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.item4', { defaultValue: '<strong>Legal Requirements:</strong>...' }) }} />
+                     <li dangerouslySetInnerHTML={{ __html: t('privacy.infoShare.item5', { defaultValue: '<strong>Business Transfers:</strong>...' }) }} />
                    </ul>
               </section>
 
               {/* Section 4 */}
               <section id="data-security"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Data Storage and Security
+                  {t('privacy.dataSecurity.title', { defaultValue: 'Data Storage and Security' })}
                 </h2>
                 {/* ... rest of section 4 content ... */}
-                <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 scroll-mt-24">Security Measures</h3> {/* Add scroll-mt */}
+                <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 scroll-mt-24">{t('privacy.dataSecurity.securityMeasures.title', { defaultValue: 'Security Measures' })}</h3> {/* Add scroll-mt */}
                 {/* ... rest of 4.1 content ... */}
                  <p className="leading-relaxed mb-3">
-                   We implement industry-standard security measures to protect your data:
+                   {t('privacy.dataSecurity.securityMeasures.intro', { defaultValue: 'We implement industry-standard...' })}
                  </p>
                  <ul className="list-disc pl-6 space-y-2">
-                   <li>Encryption of data in transit (HTTPS/TLS)</li>
-                   <li>Encryption of sensitive data at rest</li>
-                   <li>Password hashing using bcrypt</li>
-                   <li>Regular security audits and updates</li>
-                   <li>Access controls and authentication mechanisms</li>
-                   <li>Secure token-based authentication (JWT)</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item1', { defaultValue: 'Encryption of data in transit (HTTPS/TLS)' })}</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item2', { defaultValue: 'Encryption of sensitive data at rest' })}</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item3', { defaultValue: 'Password hashing using bcrypt' })}</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item4', { defaultValue: 'Regular security audits and updates' })}</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item5', { defaultValue: 'Access controls and authentication mechanisms' })}</li>
+                   <li>{t('privacy.dataSecurity.securityMeasures.item6', { defaultValue: 'Secure token-based authentication (JWT)' })}</li>
                  </ul>
 
-                 <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 mt-6 scroll-mt-24">Data Retention</h3> {/* Add scroll-mt */}
+                 <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-3 mt-6 scroll-mt-24">{t('privacy.dataSecurity.retention.title', { defaultValue: 'Data Retention' })}</h3> {/* Add scroll-mt */}
                  {/* ... rest of 4.2 content ... */}
                   <p className="leading-relaxed">
-                    We retain your personal information for as long as your account is active or as needed to provide services. If you delete your account, we will delete or anonymize your data within 90 days, except where we must retain it for legal or regulatory purposes.
+                    {t('privacy.dataSecurity.retention.p1', { defaultValue: 'We retain your personal information...' })}
                   </p>
               </section>
 
               {/* Section 5 */}
               <section id="rights-choices"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Your Rights and Choices
+                  {t('privacy.rightsChoices.title', { defaultValue: 'Your Rights and Choices' })}
                 </h2>
                 {/* ... rest of section 5 content ... */}
                  <p className="leading-relaxed mb-4">
-                   Depending on your location, you may have the following rights regarding your personal data:
+                   {t('privacy.rightsChoices.intro', { defaultValue: 'Depending on your location...' })}
                  </p>
                  {/* ... rest of section 5 grid ... */}
                   <div className="grid md:grid-cols-2 gap-4 mb-4">
                     {/* ... (Access, Correction, etc.) ... */}
                      <div className="border border-[var(--surface-card-border)] rounded-lg p-4">
-                       <h4 className="font-medium text-[var(--text-primary)] mb-2">Access & Portability</h4>
+                       <h4 className="font-medium text-[var(--text-primary)] mb-2">{t('privacy.rightsChoices.access.title', { defaultValue: 'Access & Portability' })}</h4>
                        <ul className="text-sm space-y-1">
-                         <li>• Request a copy of your data</li>
-                         <li>• Receive data in a portable format</li>
+                         <li>{t('privacy.rightsChoices.access.item1', { defaultValue: '• Request a copy of your data' })}</li>
+                         <li>{t('privacy.rightsChoices.access.item2', { defaultValue: '• Receive data in a portable format' })}</li>
                        </ul>
                      </div>
                      {/* Add scroll-mt-24 to other h4 elements if needed */}
                       <div className="border border-[var(--surface-card-border)] rounded-lg p-4">
-                        <h4 className="font-medium text-[var(--text-primary)] mb-2">Correction & Deletion</h4>
+                        <h4 className="font-medium text-[var(--text-primary)] mb-2">{t('privacy.rightsChoices.correction.title', { defaultValue: 'Correction & Deletion' })}</h4>
                         <ul className="text-sm space-y-1">
-                          <li>• Update inaccurate information</li>
-                          <li>• Request deletion of your data</li>
+                          <li>{t('privacy.rightsChoices.correction.item1', { defaultValue: '• Update inaccurate information' })}</li>
+                          <li>{t('privacy.rightsChoices.correction.item2', { defaultValue: '• Request deletion of your data' })}</li>
                         </ul>
                       </div>
                       <div className="border border-[var(--surface-card-border)] rounded-lg p-4">
-                        <h4 className="font-medium text-[var(--text-primary)] mb-2">Consent Management</h4>
+                        <h4 className="font-medium text-[var(--text-primary)] mb-2">{t('privacy.rightsChoices.consent.title', { defaultValue: 'Consent Management' })}</h4>
                         <ul className="text-sm space-y-1">
-                          <li>• Withdraw consent anytime</li>
-                          <li>• Opt-out of marketing emails</li>
+                          <li>{t('privacy.rightsChoices.consent.item1', { defaultValue: '• Withdraw consent anytime' })}</li>
+                          <li>{t('privacy.rightsChoices.consent.item2', { defaultValue: '• Opt-out of marketing emails' })}</li>
                         </ul>
                       </div>
                       <div className="border border-[var(--surface-card-border)] rounded-lg p-4">
-                        <h4 className="font-medium text-[var(--text-primary)] mb-2">Restriction & Objection</h4>
+                        <h4 className="font-medium text-[var(--text-primary)] mb-2">{t('privacy.rightsChoices.restriction.title', { defaultValue: 'Restriction & Objection' })}</h4>
                         <ul className="text-sm space-y-1">
-                          <li>• Request limited processing</li>
-                          <li>• Object to certain uses</li>
+                          <li>{t('privacy.rightsChoices.restriction.item1', { defaultValue: '• Request limited processing' })}</li>
+                          <li>{t('privacy.rightsChoices.restriction.item2', { defaultValue: '• Object to certain uses' })}</li>
                         </ul>
                       </div>
                   </div>
-                 <p className="leading-relaxed">
-                   To exercise any of these rights, please contact us at <a href="mailto:privacy@buymeacoffee-africa.com" className="font-medium text-[var(--color-coffee)] hover:text-[var(--color-espresso)]">privacy@buymeacoffee-africa.com</a>
-                 </p>
+                 <p className="leading-relaxed" dangerouslySetInnerHTML={{ __html: t('privacy.rightsChoices.p1', { defaultValue: 'To exercise any of these rights, please contact us at <a href="mailto:privacy@buymeacoffee-africa.com" className="font-medium text-[var(--color-coffee)] hover:text-[var(--color-espresso)]">privacy@buymeacoffee-africa.com</a>' }) }} />
               </section>
 
               {/* Section 6 */}
               <section id="childrens-privacy"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Children's Privacy
+                  {t('privacy.childrensPrivacy.title', { defaultValue: "Children's Privacy" })}
                 </h2>
                 {/* ... rest of section 6 content ... */}
                 <p className="leading-relaxed">
-                   BuyMeACoffee-Africa is not intended for children under 13 years of age (or under 16 in the European Union). We do not knowingly collect personal information from children. If we discover that we have collected data from a child, we will delete it immediately. If you believe we have collected information from a child, please contact us.
+                   {t('privacy.childrensPrivacy.p1', { defaultValue: "BuyMeACoffee-Africa is not intended for children..." })}
                  </p>
               </section>
 
               {/* Contact Section */}
               <section id="contact-us" className="mt-12 pt-8 border-t border-[var(--surface-card-border)]"> {/* Add ID */}
                 <h2 className="text-3xl font-heading font-semibold text-[var(--text-primary)] border-b border-[var(--surface-card-border)] pb-2 mb-4 scroll-mt-24"> {/* Added scroll-mt */}
-                  Contact Us
+                  {t('privacy.contactUs.title', { defaultValue: 'Contact Us' })}
                 </h2>
                 {/* ... rest of contact section content ... */}
                   <p className="leading-relaxed mb-4">
-                    If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+                    {t('privacy.contactUs.intro', { defaultValue: 'If you have questions, concerns, or requests...' })}
                   </p>
                   <div className="bg-[var(--surface-card-bg)] border border-[var(--surface-card-border)] rounded-lg p-6 space-y-2">
-                    <p className="text-[var(--text-secondary)]">
-                      <strong>Email:</strong> <a href="mailto:privacy@buymeacoffee-africa.com" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">privacy@buymeacoffee-africa.com</a>
-                    </p>
-                    <p className="text-[var(--text-secondary)]">
-                      <strong>Support:</strong> <a href="mailto:support@buymeacoffee-africa.com" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">support@buymeacoffee-africa.com</a>
-                    </p>
-                    <p className="text-[var(--text-secondary)]">
-                      <strong>GitHub:</strong> <a href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa" target="_blank" rel="noopener noreferrer" className="text-[var(--color-coffee)] hover:text-[var(--color-espresso)] hover:underline">github.com/2MJ-DEV/BuyMeACoffee-Africa</a>
-                    </p>
+                    <p className="text-[var(--text-secondary)]" dangerouslySetInnerHTML={{ __html: t('privacy.contactUs.email', { defaultValue: '<strong>Email:</strong> <a href="mailto:privacy@buymeacoffee-africa.com" ...>privacy@buymeacoffee-africa.com</a>' }) }} />
+                    <p className="text-[var(--text-secondary)]" dangerouslySetInnerHTML={{ __html: t('privacy.contactUs.support', { defaultValue: '<strong>Support:</strong> <a href="mailto:support@buymeacoffee-africa.com" ...>support@buymeacoffee-africa.com</a>' }) }} />
+                    <p className="text-[var(--text-secondary)]" dangerouslySetInnerHTML={{ __html: t('privacy.contactUs.github', { defaultValue: '<strong>GitHub:</strong> <a href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa" ...>github.com/2MJ-DEV/BuyMeACoffee-Africa</a>' }) }} />
                   </div>
               </section>
             </div>
