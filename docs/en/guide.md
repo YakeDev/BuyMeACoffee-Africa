@@ -7,6 +7,8 @@
   <p align="center">
     Welcome to BuyMeACoffee Africa, an African platform inspired by Buy Me a Coffee, which allows <b>creators, artists, developers, and entrepreneurs</b> to receive <b>financial support</b> from their community via <b>Mobile Money</b> (Airtel Money, Orange Money, M-Pesa).
     <br />
+    <strong>Development status:</strong> The public backend currently exposes authentication only (email + GitHub). Mobile Money payments and dashboards described below are part of the roadmap and not yet live.
+    <br />
     <a href="https://github.com/2MJ-DEV/BuyMeACoffee-Africa"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -167,7 +169,6 @@ To start **supporting your favourite creator**, you first need to:
 Distributed under the **MIT License**. See [`LICENSE`](/LICENSE) for more information.
 
 <p align="right">(<a href="#buymeacoffee-africa">back to top</a>)</p>
-
 
 
 

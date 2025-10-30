@@ -10,6 +10,26 @@ const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const GITHUB_REDIRECT_URI = process.env.GITHUB_REDIRECT_URI;
 
+function validatePasswordStrength(password) {
+  if (password.length < 10) {
+    return { ok: false, message: "Password must be at least 10 characters long." };
+  }
+
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasDigit = /[0-9]/.test(password);
+  const hasSymbol = /[^A-Za-z0-9]/.test(password);
+
+  if (!hasUppercase || !hasLowercase || !hasDigit || !hasSymbol) {
+    return {
+      ok: false,
+      message: "Password must include upper and lowercase letters, a number, and a special character.",
+    };
+  }
+
+  return { ok: true, message: null };
+}
+
 const PUBLIC_USER_SELECT = {
   id: true,
   name: true,
@@ -54,6 +74,10 @@ export async function registerUser(req, res, next) {
   }
 
   const normalizedEmail = email.trim().toLowerCase();
+  const passwordCheck = validatePasswordStrength(password);
+  if (!passwordCheck.ok) {
+    return res.status(400).json({ message: passwordCheck.message });
+  }
 
   try {
     const existingUser = await prisma.user.findUnique({

@@ -4,11 +4,15 @@ Express + Prisma backend connected to Neon (PostgreSQL).
 
 ## Getting started
 
-1. Copy `.env.example` to `.env` and fill in:
+1. Copy the appropriate environment template:
+   - For local development: `cp .env.example .env.development.local`
+   - For production deployments: `cp .env.production.example .env.production`
+   Fill in at least:
    - `DATABASE_URL` (Neon connection string with `sslmode=require`)
    - `JWT_SECRET` (strong random string)
    - `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET` / `GITHUB_REDIRECT_URI`
-   - Optional: adjust `CORS_ORIGIN` for your frontend URLs
+   - `RATE_LIMIT_GLOBAL_MAX` / `RATE_LIMIT_AUTH_MAX` (tighten for production as needed)
+   - Update `CORS_ORIGIN` with the allowed frontend origins
 2. Install dependencies from the monorepo root:
    ```bash
    pnpm install --filter buymeacoffee-africa-server --no-frozen-lockfile
@@ -46,3 +50,9 @@ The JWT token expires after 1 hour. Rotate the secret periodically and consider 
 
 - `GET /health` – checks database connectivity
 - Structured request logs are emitted via `morgan`; integrate your log shipper or monitoring stack here.
+
+## Deployment notes
+
+- The frontend currently rewrites all Vercel routes to `/`. Deploy this API separately (e.g., Render, Railway, or Vercel serverless functions) and point `VITE_API_BASE_URL` to the public API URL.
+- Keep environment files out of version control – use `.env.development.local` locally and configure production secrets via your hosting provider’s secret manager.
+- Rotate JWT secrets, GitHub OAuth credentials, and database passwords regularly. Tighten rate limits (`RATE_LIMIT_*`) before going live.
