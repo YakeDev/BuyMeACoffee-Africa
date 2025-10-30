@@ -119,7 +119,7 @@ const Privacy = () => {
                    <div className="space-y-4">
                      {/* ... (Service Delivery, Platform Improvement, etc.) ... */}
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.serviceDelivery.title', { defaultValue: 'Service Delivery' })}</h3> {/* Add scroll-mt */}
+                        <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.serviceDelivery.title', { defaultValue: 'Service Delivery' })}</h3> {/* Add scroll-mt */}
                         {/* ... ul ... */}
                          <ul className="list-disc pl-6 space-y-1">
                            <li>{t('privacy.infoUse.serviceDelivery.item1', { defaultValue: 'Creating and managing your account' })}</li>
@@ -130,7 +130,7 @@ const Privacy = () => {
                       </div>
                       {/* Add scroll-mt-24 to other h3 elements in this section too */}
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.improvement.title', { defaultValue: 'Platform Improvement' })}</h3>
+                        <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.improvement.title', { defaultValue: 'Platform Improvement' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
                            <li>{t('privacy.infoUse.improvement.item1', { defaultValue: 'Analyzing usage patterns...' })}</li>
                            <li>{t('privacy.infoUse.improvement.item2', { defaultValue: 'Developing new features...' })}</li>
@@ -138,7 +138,7 @@ const Privacy = () => {
                          </ul>
                       </div>
                       <div>
-                        <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.communication.title', { defaultValue: 'Communication' })}</h3>
+                        <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.communication.title', { defaultValue: 'Communication' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
                            <li>{t('privacy.infoUse.communication.item1', { defaultValue: 'Sending transactional emails...' })}</li>
                            <li>{t('privacy.infoUse.communication.item2', { defaultValue: 'Providing important service announcements' })}</li>
@@ -147,7 +147,7 @@ const Privacy = () => {
                          </ul>
                       </div>
                        <div>
-                         <h3 className="text-2x1 font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.security.title', { defaultValue: 'Security and Compliance' })}</h3>
+                         <h3 className="text-2xl font-heading font-medium text-[var(--text-primary)] mb-2 scroll-mt-24">{t('privacy.infoUse.security.title', { defaultValue: 'Security and Compliance' })}</h3>
                          <ul className="list-disc pl-6 space-y-1">
                            <li>{t('privacy.infoUse.security.item1', { defaultValue: 'Detecting and preventing fraud...' })}</li>
                            <li>{t('privacy.infoUse.security.item2', { defaultValue: 'Enforcing our Terms of Service' })}</li>
