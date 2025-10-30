@@ -1,0 +1,70 @@
+import "dotenv/config";
+import cors from "cors";
+import express from "express";
+import authRoutes from "./routes/authRoutes.js";
+import {
+  connectPrisma,
+  disconnectPrisma,
+  prisma,
+} from "./lib/prisma.js";
+import {
+  errorHandler,
+  notFoundHandler,
+} from "./middleware/errorHandler.js";
+
+const app = express();
+
+const rawAllowedOrigins = process.env.CORS_ORIGIN?.split(",").map((origin) => origin.trim()).filter(Boolean) ?? [];
+const corsOptions = {
+  origin: rawAllowedOrigins.length ? rawAllowedOrigins : true,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
+app.get("/health", async (req, res, next) => {
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+    return res.json({ status: "ok" });
+  } catch (error) {
+    return next(error);
+  }
+});
+
+app.use("/api/auth", authRoutes);
+
+app.use(notFoundHandler);
+app.use(errorHandler);
+
+const port = Number.parseInt(process.env.PORT || "4000", 10);
+
+async function startServer() {
+  try {
+    await connectPrisma();
+    const server = app.listen(port, () => {
+      console.log(`🚀 Server listening on port ${port}`);
+    });
+
+    const shutdown = async (signal) => {
+      console.log(`Received ${signal}. Closing server...`);
+      await disconnectPrisma();
+      server.close(() => {
+        console.log("Server closed. Goodbye!");
+        process.exit(0);
+      });
+    };
+
+    process.on("SIGINT", () => {
+      void shutdown("SIGINT");
+    });
+    process.on("SIGTERM", () => {
+      void shutdown("SIGTERM");
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+}
+
+startServer();
