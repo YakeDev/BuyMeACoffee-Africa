@@ -216,7 +216,7 @@ const Navbar = () => {
 						<Link
 							to={withLanguagePrefix('/login')}
 							onClick={() => setIsMobileMenuOpen(false)}
-							className='btn-primary inline-flex w-full items-center justify-center rounded-full px-5 py-2 text-sm font-semibold'>
+							className='btn-primary inline-flex w-full items-center justify-center rounded-full px-5 py-2 text-sm font-semibold uppercase'>
 							{t('common.actions.goToApp')}
 						</Link>
 						<button
