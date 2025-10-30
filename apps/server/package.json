@@ -11,15 +11,15 @@
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
-    "@prisma/client": "^6.18.0",
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "prisma": "^6.18.0"
+    "@prisma/client": "*",
+    "bcrypt": "*",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "jsonwebtoken": "*"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "*",
+    "prisma": "*"
   }
 }
